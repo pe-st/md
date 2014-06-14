@@ -1,6 +1,6 @@
-* Java
+# Java
 
-** Java Online Ressourcen
+## Java Online Ressourcen
 
 - Thinking in Java
 - Critical Comparison to C++ (1997):
@@ -8,138 +8,138 @@
 - Java-C++ Comparison:
   http://www.cc.gatech.edu/classes/AY2002/cs6390_fall/resources/java/YannisJava-cpp.pdf
 
-*** 2014
+### 2014
 
 - Introduction to Programming Using Java, Sixth Edition
   http://math.hws.edu/javanotes/
 - Java ist auch eine Insel (Christian Ullenboom)
   http://openbook.galileocomputing.de/javainsel/
 
-** eclipse
+## eclipse
 
 http://developer.apple.com/tools/usingeclipse.html
 
-** Java vs C++
+## Java vs C++
 
-- Wrapper-Typen für primitive Typen
+- Wrapper-Typen fÃ¼r primitive Typen
 - keine unsigned Typen
 - char ist Unicode, belegt 2 Bytes
-- Alles ist eine Referenz (Referenzen können aber neu zugewiesen werden)
-  . auch this ist eine Referenz und kein Zeiger (logisch...)
-  . keine Objekte auf dem Stack
-  . Schlüsselwort "null" für eine "Null-Referenz"
+- Alles ist eine Referenz (Referenzen kÃ¶nnen aber neu zugewiesen werden)
+  - auch this ist eine Referenz und kein Zeiger (logisch...)
+  - keine Objekte auf dem Stack
+  - SchlÃ¼sselwort "null" fÃ¼r eine "Null-Referenz"
 - Garbage Collector
 - Scope-Regeln. In Java keine gleichnamige neue Objekte in inneren Scopes
 - kein Semikolon nach class {}
-- Namensräume mit umgekehrten Domain-Namen (ch.schlau.pesche);
+- NamensrÃ¤ume mit umgekehrten Domain-Namen (ch.schlau.pesche);
   vorgegebene Verzeichnis-Struktur (packages)
-  . package = library of classes
-  . import und package statt include
-  . nur eine public-Klasse pro .java-File
+  - package = library of classes
+  - import und package statt include
+  - nur eine public-Klasse pro .java-File
 - main ist eine "public static" Methode mit fixer Signatur;
   Klassenname muss Filenamen entsprechen
 - public/protected/private bei jedem Element, default ist "package-private"
 - Auch Klassen sind public oder "package-private"
-- kein Präprozessor
-- kein Überladen von Operatoren
-- == testet auf Identität; für Äquivalenz equals() verwenden
-  (uU für eigene Klasse überschreiben nötig)
-- bool heisst boolean und unterscheidet sich stärker von integers:
+- kein PrÃ¤prozessor
+- kein Ãœberladen von Operatoren
+- == testet auf IdentitÃ¤t; fÃ¼r Ã„quivalenz equals() verwenden
+  (uU fÃ¼r eigene Klasse Ã¼berschreiben nÃ¶tig)
+- bool heisst boolean und unterscheidet sich stÃ¤rker von integers:
   - keine automatische Konversion von int zu boolean in logischen
-    Ausdrücken
+    AusdrÃ¼cken
 - zwei verschiedene Rechts-Schiebe-Operatoren:
-  >> signed right shift
-  >>> unsigned right shift (zero extension)
-- komma ist kein Operator (nur für for-Schlaufen)
+  - `>>` signed right shift
+  - `>>>` unsigned right shift (zero extension)
+- komma ist kein Operator (nur fÃ¼r for-Schlaufen)
 - Casts: C-Style Casts, nicht alles erlaubt ("casts are safe")
 - es gibt kein sizeof
 - kein goto, aber break und continue mit Labels
 - Initialisierung auch von non-const Klassenelementen bei der Definition
-  . passiert vor den Konstruktoren
-  . static clause (static block)
-  . instance initialization clause
+  - passiert vor den Konstruktoren
+  - static clause (static block)
+  - instance initialization clause
 - const heisst final, volatile bleibt volatile
-  . finale Referenzen entsprechen T* const, für const T* gibt es keine Entsprechung
-  . blank finals: unterschiedliche Werte für verschiedene Exemplare
-  . finale Argumente entsprechen const T& Argumenten (wirklich nötig nur bei Weitergabe an anonyme innere Klassen)
-  . final spielt für Signatur-Check von Parametern keine Rolle
-  . finale Methoden können nicht überschrieben werden
-  . finale Klassen können nicht beerbt werden
-- Konstruktor forwarding mit this(argumente,für,anderen,ctor)
-- keine Destruktoren, finalize nur selten nötig (im Zshg mit native Code),
-  aber nützlich zum Testen der Termination Condition
+  - finale Referenzen entsprechen T* const, fÃ¼r const T* gibt es keine Entsprechung
+  - blank finals: unterschiedliche Werte fÃ¼r verschiedene Exemplare
+  - finale Argumente entsprechen const T& Argumenten (wirklich nÃ¶tig nur bei Weitergabe an anonyme innere Klassen)
+  - final spielt fÃ¼r Signatur-Check von Parametern keine Rolle
+  - finale Methoden kÃ¶nnen nicht Ã¼berschrieben werden
+  - finale Klassen kÃ¶nnen nicht beerbt werden
+- Konstruktor forwarding mit this(argumente,fÃ¼r,anderen,ctor)
+- keine Destruktoren, finalize nur selten nÃ¶tig (im Zshg mit native Code),
+  aber nÃ¼tzlich zum Testen der Termination Condition
 - Arrays:
-  . zwei Möglichkeiten zur Array-Definition:
+  - zwei MÃ¶glichkeiten zur Array-Definition:
     int[] a;
     int a[];
-  . keine Grössendefinition möglich
-- Variable Anzahl Argumente (varargs): f(Type... t), t als Array übergeben
+  - keine GrÃ¶ssendefinition mÃ¶glich
+- Variable Anzahl Argumente (varargs): f(Type... t), t als Array Ã¼bergeben
 - Vererbung
-  . Derived extends Base
-  . Schlüsselwort super
-  . ctor-Aufruf von Basisklasse mit super(...)
-  . ctor von abgeleiteten Klassen kann Exceptions von Basis-ctor nicht fangen (!)
+  - Derived extends Base
+  - SchlÃ¼sselwort super
+  - ctor-Aufruf von Basisklasse mit super(...)
+  - ctor von abgeleiteten Klassen kann Exceptions von Basis-ctor nicht fangen (!)
     (Vgl. Stroustrup 14.4.6.1 Exceptions and Member Initialization)
-  . Methoden mit anderer Signatur verdecken Basisklassen-Methoden NICHT
-  . private Methoden können nicht überschrieben werden
-  . alle nicht-static und nicht-final Methoden sind "virtual"
-  . Schlüsselwort "abstract" statt "= 0" (pure virtual),
-    kann auch für Klassen benutzt werden
-  . in Konstruktoren können virtuelle Methoden verwendet werden (!)
-  . jeder Cast ist "safe" (entspricht einem dynamic_cast)
+  - Methoden mit anderer Signatur verdecken Basisklassen-Methoden NICHT
+  - private Methoden kÃ¶nnen nicht Ã¼berschrieben werden
+  - alle nicht-static und nicht-final Methoden sind "virtual"
+  - SchlÃ¼sselwort "abstract" statt "= 0" (pure virtual),
+    kann auch fÃ¼r Klassen benutzt werden
+  - in Konstruktoren kÃ¶nnen virtuelle Methoden verwendet werden (!)
+  - jeder Cast ist "safe" (entspricht einem dynamic_cast)
 - Keine Mehrfachvererbung, aber interface-Klassen
-  . entspricht ungefähr Mixin-Klassen ohne Implementation)
-  . "implements" statt "extends"
-  . interface-Klassen können von mehreren interfaces erben (mit "extends") (!)
-  . "tagging" Interfaces ohne Methoden (vgl. Serializable)
+  - entspricht ungefÃ¤hr Mixin-Klassen ohne Implementation)
+  - "implements" statt "extends"
+  - interface-Klassen kÃ¶nnen von mehreren interfaces erben (mit "extends") (!)
+  - "tagging" Interfaces ohne Methoden (vgl. Serializable)
 - Verschachtelte Klassen
-  . Scope-Operator ist . statt :: (bzw $ für den Filenamen: Outer$Inner.class)
-  . auch in Methoden (local inner class) und Blöcken
-  . anonyme Klassen inkl. Vererbung (grob verwandt mit anonymen structs: struct {...} variable;)
-  . innere Klassen haben Zugriff auf alle Elemente der äusseren Klasse;
+  - Scope-Operator ist . statt :: (bzw $ fÃ¼r den Filenamen: Outer$Inner.class)
+  - auch in Methoden (local inner class) und BlÃ¶cken
+  - anonyme Klassen inkl. Vererbung (grob verwandt mit anonymen structs: struct {...} variable;)
+  - innere Klassen haben Zugriff auf alle Elemente der Ã¤usseren Klasse;
     explizite Referenz mit Outer.this
-  . erzeugen von inneren Klassen: "outer.new Inner()"
-  . "nested class": statische innere Klasse
-  . nested class auch in interfaces möglich
-  . innere Klassen können erben, auch wenn die äussere Klasse auch schon
+  - erzeugen von inneren Klassen: "outer.new Inner()"
+  - "nested class": statische innere Klasse
+  - nested class auch in interfaces mÃ¶glich
+  - innere Klassen kÃ¶nnen erben, auch wenn die Ã¤ussere Klasse auch schon
     abgeleitet ist: eine Art Mehrfachvererbung...
-  . innere Klassen praktisch für Closures und Callbacks
+  - innere Klassen praktisch fÃ¼r Closures und Callbacks
 - Exceptions
-  . Die meisten Ausnahmen sind abgeleitet von Exception und dies wiederum
+  - Die meisten Ausnahmen sind abgeleitet von Exception und dies wiederum
     ist abgeleitet von Throwable
-  . Error ist auch von Throwable abgeleitet (und sollte nocht behandelt werden)
-  . es gibt fertige Methode zur Stack-Trace-Behandlung
-  . rethrow mit parameter: "throw e"
-  . "checked exceptions" : Exception specifications sind zwingend,
+  - Error ist auch von Throwable abgeleitet (und sollte nocht behandelt werden)
+  - es gibt fertige Methode zur Stack-Trace-Behandlung
+  - rethrow mit parameter: "throw e"
+  - "checked exceptions" : Exception specifications sind zwingend,
     ausser von Error und RuntimeException abgeleitete Klassen
-  . exception chaining: frühere Exceptions ("history") in neuen Exceptions speichern
-  . finally (nach allen catch-clauses geschrieben) wird immer bedient
-  . wenn eine Exception geworfen wird, während eine andere noch hängig ist, geht
-    die ältere verloren (!)
+  - exception chaining: frÃ¼here Exceptions ("history") in neuen Exceptions speichern
+  - finally (nach allen catch-clauses geschrieben) wird immer bedient
+  - wenn eine Exception geworfen wird, wÃ¤hrend eine andere noch hÃ¤ngig ist, geht
+    die Ã¤ltere verloren (!)
 - RTTI und Reflection
-  . für jede geladene Klasse ex. ein Class-Exemplar
-  . für alle Typen gibt es das "class literal" (MyClass.class)
-  . für Wrapper der primitiven Typen gibt es ein TYPE Element:
+  - fÃ¼r jede geladene Klasse ex. ein Class-Exemplar
+  - fÃ¼r alle Typen gibt es das "class literal" (MyClass.class)
+  - fÃ¼r Wrapper der primitiven Typen gibt es ein TYPE Element:
     Character.TYPE entspricht char.class
-  . instanceof Operator (gibt boolean) bzw. Class.isInstance()
-  . bei Reflection müssen Klassen erst zur Runtime vorhanden sein
+  - instanceof Operator (gibt boolean) bzw. Class.isInstance()
+  - bei Reflection mÃ¼ssen Klassen erst zur Runtime vorhanden sein
 - Container
-  . keine Möglichkeit des Zugriffs ohne Bereichsprüfung
-  . nur Array kann primitive Typen aufnehmen
-  . Aggregat-Init auch mit non-const Elementen
-  . Iteratoren: iterator() statt begin(), next() statt operator++(),
+  - keine MÃ¶glichkeit des Zugriffs ohne BereichsprÃ¼fung
+  - nur Array kann primitive Typen aufnehmen
+  - Aggregat-Init auch mit non-const Elementen
+  - Iteratoren: iterator() statt begin(), next() statt operator++(),
     iter.hasNext() statt cont.end()
-  . References (entfernt verwandt mit weak_ptr): Soft-/Weak-/Phantom-
-    in einer ReferenceQueue darf der GC die Objekte schon löschen
-  . Collections.unmodifiable{List,Set,...} erzeugt readonly Container
-  . ähnlich: Collections.synchronized{List,Set,...}
-  . wenn Iteratoren ungültig werden: beim nächsten next() eine
+  - References (entfernt verwandt mit weak_ptr): Soft-/Weak-/Phantom-
+    in einer ReferenceQueue darf der GC die Objekte schon lÃ¶schen
+  - Collections.unmodifiable{List,Set,...} erzeugt readonly Container
+  - Ã¤hnlich: Collections.synchronized{List,Set,...}
+  - wenn Iteratoren ungÃ¼ltig werden: beim nÃ¤chsten next() eine
     ConcurrentModificationException ("fail-fast")
-  . einige Methoden des Collection-Interfaces sind "optional Methods"
+  - einige Methoden des Collection-Interfaces sind "optional Methods"
     und nicht von allen Containern implementiert (zB Array.asList())
     Wenn man es trotzdem probiert: UnsupportedOperationException
-  . veraltet: Vector/Hashtable/Stack, Enumeration (alte Iteratoren)
-  . Gegenüberstellung:
+  - veraltet: Vector/Hashtable/Stack, Enumeration (alte Iteratoren)
+  - GegenÃ¼berstellung:
     |--------------+-----------------|
     | C++          | Java            |
     |--------------+-----------------|
@@ -161,58 +161,58 @@ http://developer.apple.com/tools/usingeclipse.html
     |--------------+-----------------|
 
 - I/O
-  . seit Java 1.1 char-oriented IO (Unicode) statt byte-oriented:
+  - seit Java 1.1 char-oriented IO (Unicode) statt byte-oriented:
     Input-/Outputstream sind byte-oriented, Reader/Writer Zeichenorientiert
-  . nio (new IO): bessere Performance (seit JDK 1.4)
-    nio arbeitet mit Buffers und Channels und unterstützt "type casts"
-    von primitiven Typen auf die binäre Repräsentation
-  . Memory-mapped Files mit nio
-  . File-Locking eingebaut. Welche Art von Lock, nur Schreiben oder auch Lesen?
-  . Zip und Gzip direkt unterstützt, ebenso Checksummen
-  . Jar's (Java Archives) sind entweder gezippt oder unkomprimiert;
+  - nio (new IO): bessere Performance (seit JDK 1.4)
+    nio arbeitet mit Buffers und Channels und unterstÃ¼tzt "type casts"
+    von primitiven Typen auf die binÃ¤re ReprÃ¤sentation
+  - Memory-mapped Files mit nio
+  - File-Locking eingebaut. Welche Art von Lock, nur Schreiben oder auch Lesen?
+  - Zip und Gzip direkt unterstÃ¼tzt, ebenso Checksummen
+  - Jar's (Java Archives) sind entweder gezippt oder unkomprimiert;
     unkomprimiert im CLASSPATH erlaubt
-  . Einfache Persistenz mit Interface Serializable; mehr Möglichkeiten
+  - Einfache Persistenz mit Interface Serializable; mehr MÃ¶glichkeiten
     mit Java Data Objects (JDO) oder "Hibernate"
-  . Serialisierung unter anderem nötig für RMI (Remote Method Invocation = Java
+  - Serialisierung unter anderem nÃ¶tig fÃ¼r RMI (Remote Method Invocation = Java
     RPC) und JavaBeans
-  . Mehr Kontrolle über Serialisierung mit Externalizable
-  . Felder mit dem "transient" Qualifier werden nicht serialisiert
-    (zB für Passwörter)
-  . Serializable: "tagging" Interfaces ohne Methoden, aber bestimmte private (!)
+  - Mehr Kontrolle Ã¼ber Serialisierung mit Externalizable
+  - Felder mit dem "transient" Qualifier werden nicht serialisiert
+    (zB fÃ¼r PasswÃ¶rter)
+  - Serializable: "tagging" Interfaces ohne Methoden, aber bestimmte private (!)
     Methode dienen als Anpassungs-Schnittstelle -> schwarze Magie...
-  . statische Felder müssen explizit/manuell serialisiert werden
-  . Preferences verwenden unter Windows die Registry. Und unter OS X?
-  . Regexp: spezielle Behandlung von '\', zB '\' = "\\\\" (!)
-  . Regexp: zusätzlich zu "greedy" und "reluctant" auch noch "possessive"
+  - statische Felder mÃ¼ssen explizit/manuell serialisiert werden
+  - Preferences verwenden unter Windows die Registry. Und unter OS X?
+  - Regexp: spezielle Behandlung von '\', zB '\' = "\\\\" (!)
+  - Regexp: zusÃ¤tzlich zu "greedy" und "reluctant" auch noch "possessive"
 - Threads, Concurrency
-  . Unterscheidung zwischen normalen und Daemon-Threads (setDaemon, isDaemon):
+  - Unterscheidung zwischen normalen und Daemon-Threads (setDaemon, isDaemon):
     eine Applikation kann trotz laufender Daemon-Threads terminieren
-  . Vokabular: yield, sleep, wait*, join, interrupt, notify*, notifyAll*
+  - Vokabular: yield, sleep, wait*, join, interrupt, notify*, notifyAll*
     deprecated: stop, destroy, suspend, resume
     (* Methoden von Object, nicht Thread, da Bezug auf den Lock jedes Objekts;
        Verwendung nur in synchronized-Kontext)
-  . Thread-Stati: new, runnable, dead, blocked
-  . entweder von Thread ableiten oder Runnable implementieren
-  . Zuweisung und Rückgabe von primitiven Typen (ausser long und double) sind
-    atomar. Bei long und double ist volatile nötig.
-  . synchronized als Qualifier einer Methode: alle synchronized-Methoden eines
+  - Thread-Stati: new, runnable, dead, blocked
+  - entweder von Thread ableiten oder Runnable implementieren
+  - Zuweisung und RÃ¼ckgabe von primitiven Typen (ausser long und double) sind
+    atomar. Bei long und double ist volatile nÃ¶tig.
+  - synchronized als Qualifier einer Methode: alle synchronized-Methoden eines
     Objekts benutzen denselben impliziten Mutex pro Objekt
-  . synchronized ist nicht Teil der Signatur
-  . synchronized als Block : synchronized(object) { /* critical section */ }
-  . Beim Mischen von synchronized-Methoden und synchronized-Blöcken
+  - synchronized ist nicht Teil der Signatur
+  - synchronized als Block : synchronized(object) { /* critical section */ }
+  - Beim Mischen von synchronized-Methoden und synchronized-BlÃ¶cken
     synchronized(this) verwenden, damit derselbe Semaphor verwendet wird.
-  . Producer/Consumer Pattern mit
+  - Producer/Consumer Pattern mit
     Producer: produce something; synchronize(consumer) { consumer.notify(); }
     Consumer: while (nothing to consume) wait();
-  . Producer/Consumer ohne wait: mit PipedWriter/PipedReader
-  . Überarbeitetes Memory-Model mit Java 1.5
+  - Producer/Consumer ohne wait: mit PipedWriter/PipedReader
+  - Ãœberarbeitetes Memory-Model mit Java 1.5
     (http://www.artima.com/forums/flat.jsp?forum=226&thread=180936&message=235937)
 
-** javadoc
+## javadoc
 
-*** 2014
+### 2014
 
-- package-info.java für dokumentierte packages
+- package-info.java fÃ¼r dokumentierte packages
 - {@inheritDocs} ?
 
 
@@ -220,6 +220,5 @@ http://developer.apple.com/tools/usingeclipse.html
 * eof
 
 Local Variables:
-mode: outline
-coding: latin-1
+coding: utf-8
 End:
