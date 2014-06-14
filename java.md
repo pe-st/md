@@ -8,6 +8,13 @@
 - Java-C++ Comparison:
   http://www.cc.gatech.edu/classes/AY2002/cs6390_fall/resources/java/YannisJava-cpp.pdf
 
+*** 2014
+
+- Introduction to Programming Using Java, Sixth Edition
+  http://math.hws.edu/javanotes/
+- Java ist auch eine Insel (Christian Ullenboom)
+  http://openbook.galileocomputing.de/javainsel/
+
 ** eclipse
 
 http://developer.apple.com/tools/usingeclipse.html
@@ -54,7 +61,8 @@ http://developer.apple.com/tools/usingeclipse.html
 - const heisst final, volatile bleibt volatile
   . finale Referenzen entsprechen T* const, für const T* gibt es keine Entsprechung
   . blank finals: unterschiedliche Werte für verschiedene Exemplare
-  . finale Argument entsprechen const T& Argumenten
+  . finale Argumente entsprechen const T& Argumenten (wirklich nötig nur bei Weitergabe an anonyme innere Klassen)
+  . final spielt für Signatur-Check von Parametern keine Rolle
   . finale Methoden können nicht überschrieben werden
   . finale Klassen können nicht beerbt werden
 - Konstruktor forwarding mit this(argumente,für,anderen,ctor)
@@ -199,6 +207,15 @@ http://developer.apple.com/tools/usingeclipse.html
   . Producer/Consumer ohne wait: mit PipedWriter/PipedReader
   . Überarbeitetes Memory-Model mit Java 1.5
     (http://www.artima.com/forums/flat.jsp?forum=226&thread=180936&message=235937)
+
+** javadoc
+
+*** 2014
+
+- package-info.java für dokumentierte packages
+- {@inheritDocs} ?
+
+
 
 * eof
 
