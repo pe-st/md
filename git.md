@@ -35,4 +35,10 @@ git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA%
 
 Fetching in steps (until the next author not in the author file is encountered)
 
+First fetch
+
 git svn fetch --username=tksnp -A.git/authors -r29714:HEAD
+
+Subsequent fetches
+
+git svn fetch --username=tksnp -A.git/authors
