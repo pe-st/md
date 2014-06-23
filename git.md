@@ -16,7 +16,8 @@ git notes
   By default HEAD points to your most recent commit, so it can be used as a quick
   way to reference that commit without having to look up the SHA.
 
-- git branch
+- `git branch` or `git branch --all`
+- `git remote` or `git remote -v`
 
 
 ## repositories
@@ -28,6 +29,9 @@ git notes
 - upload: `git push` or `git push -u origin master`
   The -u tells Git to remember the parameters, so that next time we can simply run git push and Git will know what to do
 
+### remotes
+
+- 
 
 ## files
 
@@ -36,6 +40,8 @@ git notes
 - revert a file to the state of the last commit: `git checkout -- <file>`
   (`--` to protect from changing to a branch called `<file>`)
 - remove a file from the repo (a branch): `git rm <file>`
+- commit what is staged: `git commit -m "comment"`
+- update last commit with stage: `git commit --amend`
 
 
 ## branches
@@ -70,17 +76,37 @@ cd c:\Daten\src\git
 mkdir fo_java
 cd fo_java
 set SVN_REPO_FO_JAVA=(as in wiki)
+// set SVN_REPO_FO_TEST=(as in wiki)
 // git svn init --username=tksnp --prefix=origin/ -t tags -b branches -T ao -T trunk -T sparse %SVN_REPO_FO_JAVA%
 // git svn init --username=tksnp --prefix=origin/ --tags=/ao --branches=/sparse --trunk=/trunk %SVN_REPO_FO_JAVA%
 // git svn init --username=tksnp --prefix=origin/ --branches=/branches %SVN_REPO_FO_JAVA%
-git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA%
+// git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA%
+git svn init --username=tksnp --prefix=origin/ --trunk=/trunk --tags=/tags --branches=/branches --branches=/ao %SVN_REPO_FO_TEST%
 
 Fetching in steps (until the next author not in the author file is encountered)
 
 First fetch
 
-git svn fetch --username=tksnp -A.git/authors -r29714:HEAD
+//git svn fetch --username=tksnp -A.git/authors -r29714:HEAD
+//git svn fetch --username=tksnp -A../authors -r731:HEAD
+git svn fetch --username=tksnp -A../authors
 
 Subsequent fetches
 
 git svn fetch --username=tksnp -A.git/authors
+
+
+### errors with git svn
+
+- not a valid SHA1
+
+  went away when importing without -r switch, see
+  http://stackoverflow.com/a/23525321/3686
+  You didn't fetch from revision old enough to span at least one commit into trunk (for example, using -r option).
+
+- RA layer request failed: [...]
+  Could not read chunk size: Connection reset by peer [...] at /usr/lib/perl5/site_perl/Git/SVN/Ra.pm line 290
+
+  Fetching one big commit (r284?), took too long from home (slower connection), but worked in the office
+
+
