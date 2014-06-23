@@ -9,7 +9,7 @@ git notes
 
 - git log
   git log --pretty=format:"%h %s" --graph
-  git log --pretty=format:"%h %an: %s" --all
+  git log --pretty=format:"%h %ai %an: %s" --all
 - git diff HEAD
 
   The HEAD is a pointer that holds your position within all your different commits.
@@ -48,10 +48,26 @@ git notes
 
 - create a new branch: `git branch <branchname>`
 - switch to a branch: `git checkout <branchname>`
+- combine creation/switch: `git checkout -b <branchname>`
 - merge a branch into the current branch: `git merge <branchname>`
 - delete a branch: `git branch -d <branchname>`
   (if there are unmerged changes: `git branch --force -d <branchname>`)
 
+### under the hood
+
+Branches are stored in .git/refs
+
+- master is in .git/refs/heads/master
+- local branches are in .git/refs/heads/<localbranch>
+- remote branches are in .git/refs/remotes, e.g. .git/refs/remotes/origin/trunk
+- local branch from remote branch (tracking branch): `git checkout -b b42 origin/b42`
+  or `git checkout --track origin/b42`
+- delete a remote branch: `git push origin :<branch>`
+
+
+### merge
+
+- fast forward: current branch had no modifications after the branching point
 
 
 ### remote repo
@@ -94,6 +110,19 @@ git svn fetch --username=tksnp -A../authors
 Subsequent fetches
 
 git svn fetch --username=tksnp -A.git/authors
+
+
+### svn config
+
+Versuch:
+
+git svn init --username=tksnp --prefix=origin/ --ignore-paths="^(?:AFO|static_files)" %SVN_REPO_FO_TEST%
+
+[svn-remote "svn"]
+	fetch = trunk:refs/remotes/origin/trunk
+	fetch = ao:refs/remotes/origin/ao
+	branches = branches/{EmacsNsk,AtmaTester}/*:refs/remotes/origin/branches/*
+	tags = tags/*:refs/remotes/origin/tags/*
 
 
 ### errors with git svn
