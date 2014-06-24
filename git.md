@@ -109,20 +109,31 @@ git svn fetch --username=tksnp -A../authors
 
 Subsequent fetches
 
-git svn fetch --username=tksnp -A.git/authors
+git svn fetch --username=tksnp -A../authors >> ../fo_test_fetch.txt
 
 
 ### svn config
 
 Versuch:
 
-git svn init --username=tksnp --prefix=origin/ --ignore-paths="^(?:AFO|static_files)" %SVN_REPO_FO_TEST%
+git svn init --username=tksnp --prefix=origin/ --ignore-paths="^(?:AFO|static_files)" %SVN_REPO_FO_TEST% fo_test
+
+corresponding line in .git/config:
+    [svn-remote "svn"]
+    	ignore-paths = ^(?:AFO|static_files) 
+
+change these to .git/config:
 
 [svn-remote "svn"]
+	...
 	fetch = trunk:refs/remotes/origin/trunk
 	fetch = ao:refs/remotes/origin/ao
 	branches = branches/{EmacsNsk,AtmaTester}/*:refs/remotes/origin/branches/*
 	tags = tags/*:refs/remotes/origin/tags/*
+
+git svn fetch --username=tksnp -A../authors >> ../fo_test_fetch.txt
+
+takes about 45 minutes for 733 revisions
 
 
 ### errors with git svn
