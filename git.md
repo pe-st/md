@@ -112,7 +112,7 @@ Subsequent fetches
 git svn fetch --username=tksnp -A../authors >> ../fo_test_fetch.txt
 
 
-### svn config
+### svn config for fo_test
 
 Versuch:
 
@@ -134,6 +134,36 @@ change these to .git/config:
 git svn fetch --username=tksnp -A../authors >> ../fo_test_fetch.txt
 
 takes about 45 minutes for 733 revisions
+
+### svn config for fo_java
+
+two repos: ao and trunk
+
+#### fo_java_trunk
+
+git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_trunk
+
+[svn-remote "svn"]
+	ignore-paths = /(?:valuemaster|legacy)/
+	include-paths = /cdfa.(?:business|test|utils)/
+	fetch = trunk:refs/remotes/origin/trunk
+
+cd fo_java_trunk
+
+git svn fetch --username=tksnp -A../authors >> ../fo_java_fetch.txt 2>&1
+
+(start 15:15)
+
+
+#### fo_java_ao
+
+git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_ao
+
+[svn-remote "svn"]
+	ignore-paths = /(?:valuemaster|legacy)/
+	fetch = ao:refs/remotes/origin/ao
+
+git svn fetch --username=tksnp -A../authors >> ../fo_ao_fetch.txt 2>&1
 
 
 ### errors with git svn
