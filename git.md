@@ -152,7 +152,7 @@ cd fo_java_trunk
 
 git svn fetch --username=tksnp -A../authors >> ../fo_java_fetch.txt 2>&1
 
-(start 15:15)
+(ca 2000-3000 revisions/h)
 
 
 #### fo_java_ao
@@ -179,4 +179,10 @@ git svn fetch --username=tksnp -A../authors >> ../fo_ao_fetch.txt 2>&1
 
   Fetching one big commit (r284?), took too long from home (slower connection), but worked in the office
 
+- RA layer request failed: REPORT request failed on '/svn/cdfa/fo_java/!svn/vcc/default':
+  REPORT of '/svn/cdfa/fo_java/!svn/vcc/default': Could not read response body:
+  Secure connection truncated (https://vmzdtooldev02.telekurs.com) at /usr/lib/perl5/site_perl/Git/SVN/Ra.pm line 290
 
+- RA layer request failed: PROPFIND request failed on '/svn/cdfa/fo_java': PROPFIND of '/svn/cdfa/fo_java':
+  could not connect to server (https://...) at /usr/lib/perl5/site_perl/Git/SVN/Ra.pm line 290
+  (network cable pulled)

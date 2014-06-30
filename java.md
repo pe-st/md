@@ -208,6 +208,74 @@ http://developer.apple.com/tools/usingeclipse.html
   - Überarbeitetes Memory-Model mit Java 1.5
     (http://www.artima.com/forums/flat.jsp?forum=226&thread=180936&message=235937)
 
+## Naming
+
+Konkrete Einfachst-Impl von interfaces: SimpleXxx
+
+## todo
+
+Iterable
+
+## Präsentation 2014-06-27 Java 7/8 Philpp Marschall von PASS/netcetera
+
+github/marschall
+github/netcetera
+
+try-with-resources (kein finally mehr), Klasse muss AutoClosable implementieren
+  (besser selbst ein NonThrowingAutoClosable machen)
+
+### java.nio
+
+java.io.File (alt)
+
+- no exceptions
+- no copy/move
+- no link/symlink
+- no support for permissions/notification
+- not testable
+
+neue Klassen:
+- Path (ohne IO, muss nicht existieren)
+- Files
+- FileSystem
+
+copy/move nur innerhalb eines FileSystem, zw. versch. file systemen mit der Files Klasse
+
+Portabler Code: Filesystem injecten
+
+### MethodHandles API
+
+Eine Art zweites Reflection API
+
+ermöglicht eine Art Methoden-Zeiger wie in C++
+
+
+### Java 8 time
+
+(Oracle TIMESTAMPTZ fkt. nur mit EclipseLink, nicht mit Hibernate)
+
+Duration <-> Period
+
+- Duration: 'scientific' (date agnostic)
+- Period: 'civil' (1 Tag ist uU 23 oder 25 Stunden bei Sommerzeitwechsel)
+
+Vergleich von Zeitpunkten (zB ZonedDateTime und OffsetDateTime): mit toInstance
+
+JDBC verwendet OffsetDateTime, nicht ZonedDateTime
+
+### Java 8
+
+@FunctionalInterface
+- default implementationen
+- statische Methoden
+- nur eine nicht-impl Methode (wegen Lambdas)
+
+Method References (:: operator) kann anstelle eines Lambdas verwendet werden
+
+### JBoss bei PASS
+
+
+
 ## javadoc
 
 ### 2014
