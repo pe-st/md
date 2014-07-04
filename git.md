@@ -157,8 +157,7 @@ git svn fetch --username=tksnp -A../authors >> ../fo_java_fetch.txt 2>&1
 (ca r18300 2014-06-30 18:00, r19100 18:42 : 1200/h)
 (ca r19100 2014-07-02 08:52, r21200 10:29 : 1200/h)
 (ca r21200 2014-07-02 11:11, r27000 16:16)
-(ca r27900 2014-07-02 18:11, )
-
+(ca r27900 2014-07-02 18:11, r36100 21:14 : 2700/h)
 
 
 #### fo_java_ao
@@ -167,9 +166,65 @@ git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_ao
 
 [svn-remote "svn"]
 	ignore-paths = /(?:valuemaster|legacy)/
+	url = ...
 	fetch = ao:refs/remotes/origin/ao
 
+cd fo_java_ao
+
+git svn fetch --username=tksnp -A../authors -r29714:HEAD  > ../fo_ao_fetch.txt 2>&1
+
 git svn fetch --username=tksnp -A../authors >> ../fo_ao_fetch.txt 2>&1
+
+
+#### fo_java_ao1
+
+git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_ao1
+
+[svn-remote "svn"]
+	ignore-paths = /(?:valuemaster|legacy)/
+	url = ...
+	fetch = ao:refs/remotes/origin/ao/trunk
+	branches = ao/*/branches:refs/remotes/ao/branches/*
+	tags = ao/*/tags:refs/remotes/ao/tags/*
+
+cd fo_java_ao1
+
+git svn fetch --username=tksnp -A../authors -r29714:HEAD  > ../fo_ao1_fetch.txt 2>&1
+
+git svn fetch --username=tksnp -A../authors >> ../fo_ao1_fetch.txt 2>&1
+
+
+#### scratch
+
+[svn-remote "svn"]
+	ignore-paths = /(?:valuemaster|legacy)/
+#	fetch = ao:refs/remotes/origin/ao
+# wildcards don't work with fetch
+#	fetch = ao/*/trunk:refs/remotes/origin/ao/trunk/*
+	fetch = ao/root/trunk:refs/remotes/origin/ao/root
+	fetch = ao/common/configuration/trunk:refs/remotes/origin/ao/common/configuration
+	fetch = ao/common/connector/trunk:refs/remotes/origin/ao/common/connector
+	fetch = ao/common/core/trunk:refs/remotes/origin/ao/common/core
+	fetch = ao/common/ddl/trunk:refs/remotes/origin/ao/common/ddl
+	fetch = ao/common/ee/trunk:refs/remotes/origin/ao/common/ee
+	fetch = ao/common/services/test/trunk:refs/remotes/origin/ao/common/services/test
+	fetch = ao/common/services/nsb/trunk:refs/remotes/origin/ao/common/services/nsb
+	fetch = ao/common/services/rc/trunk:refs/remotes/origin/ao/common/services/rc
+	fetch = ao/common/services/test-ear/trunk:refs/remotes/origin/ao/common/services/test-ear
+	fetch = ao/common/services/services-ear/trunk:refs/remotes/origin/ao/common/services/services-ear
+	fetch = ao/common/services/cardrecognition/trunk:refs/remotes/origin/ao/common/services/cardrecognition
+	fetch = ao/common/services/businesslogger/trunk:refs/remotes/origin/ao/common/services/businesslogger
+	fetch = ao/common/services/cardsegment/trunk:refs/remotes/origin/ao/common/services/cardsegment
+	fetch = ao/common/services/dccs/trunk:refs/remotes/origin/ao/common/services/dccs
+	fetch = ao/common/test/trunk:refs/remotes/origin/ao/common/test
+	fetch = ao/common/utils/trunk:refs/remotes/origin/ao/common/utils
+	fetch = ao/ifo/itx/itx-api/trunk:refs/remotes/origin/ao/ifo/itx/itx-api
+	fetch = ao/ifo/itx/itx-legacy/trunk:refs/remotes/origin/ao/ifo/itx/itx-legacy
+	fetch = ao/ifo/itx/itx-mock/trunk:refs/remotes/origin/ao/ifo/itx/itx-mock
+	fetch = ao/tfo/atm/trunk:refs/remotes/origin/ao/tfo/atm
+# not sure if this works
+#	branches = ao/*/branches:refs/remotes/ao/branches/*
+#	tags = ao/*/tags:refs/remotes/ao/tags/*
 
 
 ### errors with git svn
