@@ -86,50 +86,30 @@ Branches are stored in .git/refs
 
 cloning of fo_java since the creation of the ao directory (SVN 29714)
 
-...
-
-cd c:\Daten\src\git
-mkdir fo_java
-cd fo_java
-set SVN_REPO_FO_JAVA=(as in wiki)
-// set SVN_REPO_FO_TEST=(as in wiki)
-// git svn init --username=tksnp --prefix=origin/ -t tags -b branches -T ao -T trunk -T sparse %SVN_REPO_FO_JAVA%
-// git svn init --username=tksnp --prefix=origin/ --tags=/ao --branches=/sparse --trunk=/trunk %SVN_REPO_FO_JAVA%
-// git svn init --username=tksnp --prefix=origin/ --branches=/branches %SVN_REPO_FO_JAVA%
-// git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA%
-git svn init --username=tksnp --prefix=origin/ --trunk=/trunk --tags=/tags --branches=/branches --branches=/ao %SVN_REPO_FO_TEST%
-
-Fetching in steps (until the next author not in the author file is encountered)
-
-First fetch
-
-//git svn fetch --username=tksnp -A.git/authors -r29714:HEAD
-//git svn fetch --username=tksnp -A../authors -r731:HEAD
-git svn fetch --username=tksnp -A../authors
-
-Subsequent fetches
-
-git svn fetch --username=tksnp -A../authors >> ../fo_test_fetch.txt
-
-
 ### svn config for fo_test
 
 Versuch:
 
-git svn init --username=tksnp --prefix=origin/ --ignore-paths="^(?:AFO|static_files)" %SVN_REPO_FO_TEST% fo_test
+    set SVN_REPO_FO_TEST=(as in wiki)
+    git svn init --username=tksnp --prefix=origin/ --ignore-paths="^(?:AFO|static_files)" %SVN_REPO_FO_TEST% fo_test
 
 corresponding line in .git/config:
-    [svn-remote "svn"]
-    	ignore-paths = ^(?:AFO|static_files) 
+
+```
+[svn-remote "svn"]
+	ignore-paths = ^(?:AFO|static_files) 
+```
 
 change these to .git/config:
 
+```
 [svn-remote "svn"]
 	...
 	fetch = trunk:refs/remotes/origin/trunk
 	fetch = ao:refs/remotes/origin/ao
 	branches = branches/{EmacsNsk,AtmaTester}/*:refs/remotes/origin/branches/*
 	tags = tags/*:refs/remotes/origin/tags/*
+```
 
 git svn fetch --username=tksnp -A../authors >> ../fo_test_fetch.txt
 
@@ -141,6 +121,8 @@ two repos: ao and trunk
 
 #### fo_java_trunk
 
+```
+set SVN_REPO_FO_JAVA=(as in wiki)
 git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_trunk
 
 [svn-remote "svn"]
@@ -158,26 +140,33 @@ git svn fetch --username=tksnp -A../authors >> ../fo_java_fetch.txt 2>&1
 (ca r19100 2014-07-02 08:52, r21200 10:29 : 1200/h)
 (ca r21200 2014-07-02 11:11, r27000 16:16)
 (ca r27900 2014-07-02 18:11, r36100 21:14 : 2700/h)
+```
 
 
 #### fo_java_ao
 
-git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_ao
+   git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_ao
 
+```
 [svn-remote "svn"]
 	ignore-paths = /(?:valuemaster|legacy)/
 	url = ...
 	fetch = ao:refs/remotes/origin/ao
+```
 
-cd fo_java_ao
+First fetch
 
-git svn fetch --username=tksnp -A../authors -r29714:HEAD  > ../fo_ao_fetch.txt 2>&1
+    cd fo_java_ao
+    git svn fetch --username=tksnp -A../authors -r29714:HEAD  > ../fo_ao_fetch.txt 2>&1
 
-git svn fetch --username=tksnp -A../authors >> ../fo_ao_fetch.txt 2>&1
+Subsequent fetches
+
+    git svn fetch --username=tksnp -A../authors >> ../fo_ao_fetch.txt 2>&1
 
 
 #### fo_java_ao1
 
+```sh
 git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_ao1
 
 [svn-remote "svn"]
