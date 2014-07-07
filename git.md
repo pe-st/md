@@ -182,6 +182,10 @@ git svn fetch --username=tksnp -A../authors -r29714:HEAD  > ../fo_ao1_fetch.txt 
 
 git svn fetch --username=tksnp -A../authors >> ../fo_ao1_fetch.txt 2>&1
 
+(ca r29714 2014-07-04 16:18, r32217 17:46 : 2500 in 90 min, ~1600/h)
+(   r32218 2014-07-06 11:36, r39016 22:06 : 6800 in 630 min, ~650/h über langsame Leitung)
+
+
 
 #### scratch
 
