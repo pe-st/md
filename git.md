@@ -243,7 +243,8 @@ git svn fetch --username=tksnp -A../authors >> ../fo_ao1_fetch.txt 2>&1
   (network cable pulled)
 
 
-
+<!--
 Local Variables:
 coding: utf-8
 End:
+-->

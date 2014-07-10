@@ -41,6 +41,7 @@ http://developer.apple.com/tools/usingeclipse.html
 - public/protected/private bei jedem Element, default ist "package-private"
 - Auch Klassen sind public oder "package-private"
 - kein Präprozessor
+- strings können nicht ohne + konkateniert werden ("foo" "bar" ist nicht möglich)
 - kein Überladen von Operatoren
 - == testet auf Identität; für Äquivalenz equals() verwenden
   (uU für eigene Klasse überschreiben nötig)
@@ -284,9 +285,8 @@ Method References (:: operator) kann anstelle eines Lambdas verwendet werden
 - {@inheritDocs} ?
 
 
-
-* eof
-
+<!--
 Local Variables:
 coding: utf-8
 End:
+-->
