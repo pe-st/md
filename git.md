@@ -166,7 +166,7 @@ Subsequent fetches
 
 #### fo_java_ao1
 
-```sh
+```
 git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_ao1
 
 [svn-remote "svn"]
@@ -183,12 +183,13 @@ git svn fetch --username=tksnp -A../authors -r29714:HEAD  > ../fo_ao1_fetch.txt 
 git svn fetch --username=tksnp -A../authors >> ../fo_ao1_fetch.txt 2>&1
 
 (ca r29714 2014-07-04 16:18, r32217 17:46 : 2500 in 90 min, ~1600/h)
-(   r32218 2014-07-06 11:36, r39016 22:06 : 6800 in 630 min, ~650/h über langsame Leitung)
-
+(   r32218 2014-07-06 11:36, r39016 22:06 : 6800 in 630 min, ~650/h Ã¼ber langsame Leitung)
+```
 
 
 #### scratch
 
+```
 [svn-remote "svn"]
 	ignore-paths = /(?:valuemaster|legacy)/
 #	fetch = ao:refs/remotes/origin/ao
@@ -218,7 +219,7 @@ git svn fetch --username=tksnp -A../authors >> ../fo_ao1_fetch.txt 2>&1
 # not sure if this works
 #	branches = ao/*/branches:refs/remotes/ao/branches/*
 #	tags = ao/*/tags:refs/remotes/ao/tags/*
-
+```
 
 ### errors with git svn
 
@@ -240,3 +241,9 @@ git svn fetch --username=tksnp -A../authors >> ../fo_ao1_fetch.txt 2>&1
 - RA layer request failed: PROPFIND request failed on '/svn/cdfa/fo_java': PROPFIND of '/svn/cdfa/fo_java':
   could not connect to server (https://...) at /usr/lib/perl5/site_perl/Git/SVN/Ra.pm line 290
   (network cable pulled)
+
+
+
+Local Variables:
+coding: utf-8
+End:

@@ -1,7 +1,7 @@
 markdown
 ========
 
-Personal notes in markdown notatino or about markdown
+Personal notes in markdown notation or about markdown
 
 
 ## Markdown
@@ -13,7 +13,7 @@ Personal notes in markdown notatino or about markdown
 
 ## Markdown on GitHub
 
-Markdown [dialect][gfm] used with GitHub.
+Markdown dialect [Github Flavored Markdown][gfm].
 
 Most notable differences:
 
@@ -50,6 +50,28 @@ int main() {
 ```
 
 
+## Markdown tricks
+
+### Comments
+
+Use HTML comments, e.g.
+
+    <!--
+    Local Variables:
+    coding: utf-8
+    End:
+    -->
+
+like at the end of this file to let Emacs known about the coding of this file.
+
+But as this is just HTML, the comment will end up in generated HTML.
+
+If you don't want the comment in the output, you can
+[use the link label syntax][so]; the shortest version
+is to use `[//]: # (comment)`
+
+    [//]: # (this is a)
+    [//]: # (comment)
 
 
 [gruber]: http://daringfireball.net/projects/markdown/
@@ -57,3 +79,11 @@ int main() {
 [gfm]:    https://help.github.com/articles/github-flavored-markdown
 [mm]:     https://guides.github.com/features/mastering-markdown
 [wog]:    https://help.github.com/articles/writing-on-github
+[so]:     http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax/20885980#20885980
+
+
+<!--
+Local Variables:
+coding: utf-8
+End:
+-->
