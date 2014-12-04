@@ -3,8 +3,8 @@
 ## Konfig
 
    * Tools / Options / General : Manual Proxy = localhost:3128
-   * Tools / Options / Java / Maven / Execution : Maven Home = (not bundled)
    * Tools / Options / Java / Maven / Apperarance : ${project.groupId}.${project.artifactId}
+   * Tools / Options / Java / Maven / Execution : Maven Home = (not bundled)
 
 
 ## Maven Projects
@@ -27,3 +27,9 @@ if they are red: *Build with dependencies*
 ## vs. Eclipse
 
 - mehr/bessere/andere? Warnungen
+
+
+## Migrating
+
+- Plugin: Eclipse Java Code Formatter
+  (config: Tools / Options / Java / Eclipse Formatter)
