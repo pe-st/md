@@ -9,7 +9,10 @@ git notes
 
 - git log
   git log --pretty=format:"%h %s" --graph
+  With author date and name
   git log --pretty=format:"%h %ai %an: %s" --all
+  With complete hash and the internal date format
+  git log --pretty=format:"%H %ad %ai %an: %s" --date=raw --all
 - git diff HEAD
 
   The HEAD is a pointer that holds your position within all your different commits.
