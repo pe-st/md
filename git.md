@@ -13,6 +13,7 @@ git notes
   git log --pretty=format:"%h %ai %an: %s" --all
   With complete hash and the internal date format
   git log --pretty=format:"%H %ad %ai %an: %s" --date=raw --all
+
 - git diff HEAD
 
   The HEAD is a pointer that holds your position within all your different commits.
@@ -21,6 +22,8 @@ git notes
 
 - `git branch` or `git branch --all`
 - `git remote` or `git remote -v`
+
+- `git show-ref`
 
 
 ## repositories
@@ -31,6 +34,17 @@ git notes
 - get and merge: `git pull` or `git pull origin master`
 - upload: `git push` or `git push -u origin master`
   The -u tells Git to remember the parameters, so that next time we can simply run git push and Git will know what to do
+
+### import local repo in GitHub
+
+git clone --bare --no-hardlinks file:///Users/pesche/Documents/dev/git/gugus/emacs.d
+cd emacs.d.git
+git push --mirror https://github.com/pe-st/dot-e.git
+
+### clone into existing directory
+
+Clone into new directory, mv the .git folder
+
 
 ### remotes
 
