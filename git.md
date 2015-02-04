@@ -65,6 +65,7 @@ create a new remote for anexisting local repo:
 - remove a file from the repo (a branch): `git rm <file>`
 - commit what is staged: `git commit -m "comment"`
 - update last commit with stage: `git commit --amend`
+- revert a file to a historic state: `git checkout <commit>`
 
 
 ### line endings
@@ -80,6 +81,7 @@ After changing the line endings in `core.autocrlf` or `.gitattributes` repopulat
 ## branches
 
 - create a new branch: `git branch <branchname>`
+  . not from HEAD: `git branch <branchname> <commit>`
 - switch to a branch: `git checkout <branchname>`
 - combine creation/switch: `git checkout -b <branchname>`
 - merge a branch into the current branch: `git merge <branchname>`
@@ -112,6 +114,12 @@ Branches are stored in .git/refs
 
 ## stash
 
+- store away some patches: `git stash`
+- show available stashes: `git stash list`
+- show the content of a stash: `git stash show -p`
+- apply a stash: `git stash apply`
+- apply a stash and drop it: `git stash pop`
+- drop a stash: `git stash drop`
 
 
 ## SSH
