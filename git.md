@@ -48,7 +48,13 @@ Clone into new directory, mv the .git folder
 
 ### remotes
 
-- 
+create a new remote for anexisting local repo:
+- on the remote:
+  `git init --bare jboss_standalone.git`
+- on the local:
+  `git remote add origin K:/Bielsave_Public/Teams/afd1/Tools/jboss_standalone.git`
+  `git push origin master`
+
 
 ## files
 
@@ -59,6 +65,16 @@ Clone into new directory, mv the .git folder
 - remove a file from the repo (a branch): `git rm <file>`
 - commit what is staged: `git commit -m "comment"`
 - update last commit with stage: `git commit --amend`
+
+
+### line endings
+
+https://help.github.com/articles/dealing-with-line-endings/
+
+After changing the line endings in `core.autocrlf` or `.gitattributes` repopulate the workspace:
+
+`git rm --cached -r .`
+`git reset --hard`
 
 
 ## branches
@@ -98,6 +114,26 @@ Branches are stored in .git/refs
 
 
 
+## SSH
+
+### SSH with PLink
+
+- set GIT_SSH=C:\Daten\P\putty\PLINK.EXE
+- load the private key (.ppk) into pageant
+- setup a PuTTY Session and connect once to store the server fingerprint
+- git clone ssh://<putty-session-name>/path/to/repo
+
+
+## Tools
+
+### Beyond Compare
+
+git config --global diff.tool bc3
+git config --global difftool.bc3.path "c:/Program Files (x86)/Beyond Compare 3/bcomp.exe"
+
+git config --global merge.tool bc3
+git config --global mergetool.bc3.path "c:/Program Files (x86)/Beyond Compare 3/bcomp.exe"
+
 
 ## SVN
 
@@ -114,18 +150,18 @@ corresponding line in .git/config:
 
 ```
 [svn-remote "svn"]
-	ignore-paths = ^(?:AFO|static_files) 
+    ignore-paths = ^(?:AFO|static_files) 
 ```
 
 change these to .git/config:
 
 ```
 [svn-remote "svn"]
-	...
-	fetch = trunk:refs/remotes/origin/trunk
-	fetch = ao:refs/remotes/origin/ao
-	branches = branches/{EmacsNsk,AtmaTester}/*:refs/remotes/origin/branches/*
-	tags = tags/*:refs/remotes/origin/tags/*
+    ...
+    fetch = trunk:refs/remotes/origin/trunk
+    fetch = ao:refs/remotes/origin/ao
+    branches = branches/{EmacsNsk,AtmaTester}/*:refs/remotes/origin/branches/*
+    tags = tags/*:refs/remotes/origin/tags/*
 ```
 
 git svn fetch --username=tksnp -A../authors >> ../fo_test_fetch.txt
@@ -143,9 +179,9 @@ set SVN_REPO_FO_JAVA=(as in wiki)
 git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_trunk
 
 [svn-remote "svn"]
-	ignore-paths = /(?:valuemaster|legacy)/
-	include-paths = /cdfa.(?:business|test|utils)/
-	fetch = trunk:refs/remotes/origin/trunk
+    ignore-paths = /(?:valuemaster|legacy)/
+    include-paths = /cdfa.(?:business|test|utils)/
+    fetch = trunk:refs/remotes/origin/trunk
 
 cd fo_java_trunk
 
@@ -166,9 +202,9 @@ git svn fetch --username=tksnp -A../authors >> ../fo_java_fetch.txt 2>&1
 
 ```
 [svn-remote "svn"]
-	ignore-paths = /(?:valuemaster|legacy)/
-	url = ...
-	fetch = ao:refs/remotes/origin/ao
+    ignore-paths = /(?:valuemaster|legacy)/
+    url = ...
+    fetch = ao:refs/remotes/origin/ao
 ```
 
 First fetch
@@ -187,11 +223,11 @@ Subsequent fetches
 git svn init --username=tksnp --prefix=origin/ %SVN_REPO_FO_JAVA% fo_java_ao1
 
 [svn-remote "svn"]
-	ignore-paths = /(?:valuemaster|legacy)/
-	url = ...
-	fetch = ao:refs/remotes/origin/ao/trunk
-	branches = ao/*/branches:refs/remotes/ao/branches/*
-	tags = ao/*/tags:refs/remotes/ao/tags/*
+    ignore-paths = /(?:valuemaster|legacy)/
+    url = ...
+    fetch = ao:refs/remotes/origin/ao/trunk
+    branches = ao/*/branches:refs/remotes/ao/branches/*
+    tags = ao/*/tags:refs/remotes/ao/tags/*
 
 cd fo_java_ao1
 
@@ -206,37 +242,35 @@ git svn fetch --username=tksnp -A../authors >> ../fo_ao1_fetch.txt 2>&1
 
 #### scratch
 
-```
-[svn-remote "svn"]
-	ignore-paths = /(?:valuemaster|legacy)/
-#	fetch = ao:refs/remotes/origin/ao
-# wildcards don't work with fetch
-#	fetch = ao/*/trunk:refs/remotes/origin/ao/trunk/*
-	fetch = ao/root/trunk:refs/remotes/origin/ao/root
-	fetch = ao/common/configuration/trunk:refs/remotes/origin/ao/common/configuration
-	fetch = ao/common/connector/trunk:refs/remotes/origin/ao/common/connector
-	fetch = ao/common/core/trunk:refs/remotes/origin/ao/common/core
-	fetch = ao/common/ddl/trunk:refs/remotes/origin/ao/common/ddl
-	fetch = ao/common/ee/trunk:refs/remotes/origin/ao/common/ee
-	fetch = ao/common/services/test/trunk:refs/remotes/origin/ao/common/services/test
-	fetch = ao/common/services/nsb/trunk:refs/remotes/origin/ao/common/services/nsb
-	fetch = ao/common/services/rc/trunk:refs/remotes/origin/ao/common/services/rc
-	fetch = ao/common/services/test-ear/trunk:refs/remotes/origin/ao/common/services/test-ear
-	fetch = ao/common/services/services-ear/trunk:refs/remotes/origin/ao/common/services/services-ear
-	fetch = ao/common/services/cardrecognition/trunk:refs/remotes/origin/ao/common/services/cardrecognition
-	fetch = ao/common/services/businesslogger/trunk:refs/remotes/origin/ao/common/services/businesslogger
-	fetch = ao/common/services/cardsegment/trunk:refs/remotes/origin/ao/common/services/cardsegment
-	fetch = ao/common/services/dccs/trunk:refs/remotes/origin/ao/common/services/dccs
-	fetch = ao/common/test/trunk:refs/remotes/origin/ao/common/test
-	fetch = ao/common/utils/trunk:refs/remotes/origin/ao/common/utils
-	fetch = ao/ifo/itx/itx-api/trunk:refs/remotes/origin/ao/ifo/itx/itx-api
-	fetch = ao/ifo/itx/itx-legacy/trunk:refs/remotes/origin/ao/ifo/itx/itx-legacy
-	fetch = ao/ifo/itx/itx-mock/trunk:refs/remotes/origin/ao/ifo/itx/itx-mock
-	fetch = ao/tfo/atm/trunk:refs/remotes/origin/ao/tfo/atm
-# not sure if this works
-#	branches = ao/*/branches:refs/remotes/ao/branches/*
-#	tags = ao/*/tags:refs/remotes/ao/tags/*
-```
+    [svn-remote "svn"]
+        ignore-paths = /(?:valuemaster|legacy)/
+    #   fetch = ao:refs/remotes/origin/ao
+    # wildcards don't work with fetch
+    #   fetch = ao/*/trunk:refs/remotes/origin/ao/trunk/*
+        fetch = ao/root/trunk:refs/remotes/origin/ao/root
+        fetch = ao/common/configuration/trunk:refs/remotes/origin/ao/common/configuration
+        fetch = ao/common/connector/trunk:refs/remotes/origin/ao/common/connector
+        fetch = ao/common/core/trunk:refs/remotes/origin/ao/common/core
+        fetch = ao/common/ddl/trunk:refs/remotes/origin/ao/common/ddl
+        fetch = ao/common/ee/trunk:refs/remotes/origin/ao/common/ee
+        fetch = ao/common/services/test/trunk:refs/remotes/origin/ao/common/services/test
+        fetch = ao/common/services/nsb/trunk:refs/remotes/origin/ao/common/services/nsb
+        fetch = ao/common/services/rc/trunk:refs/remotes/origin/ao/common/services/rc
+        fetch = ao/common/services/test-ear/trunk:refs/remotes/origin/ao/common/services/test-ear
+        fetch = ao/common/services/services-ear/trunk:refs/remotes/origin/ao/common/services/services-ear
+        fetch = ao/common/services/cardrecognition/trunk:refs/remotes/origin/ao/common/services/cardrecognition
+        fetch = ao/common/services/businesslogger/trunk:refs/remotes/origin/ao/common/services/businesslogger
+        fetch = ao/common/services/cardsegment/trunk:refs/remotes/origin/ao/common/services/cardsegment
+        fetch = ao/common/services/dccs/trunk:refs/remotes/origin/ao/common/services/dccs
+        fetch = ao/common/test/trunk:refs/remotes/origin/ao/common/test
+        fetch = ao/common/utils/trunk:refs/remotes/origin/ao/common/utils
+        fetch = ao/ifo/itx/itx-api/trunk:refs/remotes/origin/ao/ifo/itx/itx-api
+        fetch = ao/ifo/itx/itx-legacy/trunk:refs/remotes/origin/ao/ifo/itx/itx-legacy
+        fetch = ao/ifo/itx/itx-mock/trunk:refs/remotes/origin/ao/ifo/itx/itx-mock
+        fetch = ao/tfo/atm/trunk:refs/remotes/origin/ao/tfo/atm
+    # not sure if this works
+    #   branches = ao/*/branches:refs/remotes/ao/branches/*
+    #   tags = ao/*/tags:refs/remotes/ao/tags/*
 
 ### errors with git svn
 

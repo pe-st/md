@@ -26,7 +26,13 @@ Use also the Default settings ('default' project)
 
 ### Niceties
 
-Switch on Tool Buttons and Status Bar
+Enable Tool Buttons and Status Bar
+Change Settings | Editor | Editor Tabs | Tab limit to a bigger number (e.g. 40)
+
+
+### Issues
+
+Comment Block (Ctrl-/) works only with the / on the numpad (https://youtrack.jetbrains.com/issue/IDEA-16116)
 
 
 
@@ -57,11 +63,31 @@ http://plugins.jetbrains.com/plugin/6546
   - use `cdfa-formatter.xml` from SVN as config file
   - use `cdfa.importorder` from SVN for import order
 
+- Settings / Editor / General / Auto Import
+  - Optimize imports on the fly
+  - Add unambiguous imports on the fly
+- Settings / Editor / Code Style / Java / Imports
+  - Class count to use import with '*' : 50
+  - Names count to use static import with '*' : 10
+
+
 ### For eclipse users
 
 - Settings / IDE Settings / Keymap : Eclipse
   - Switch to unit test (Navigate/Test) : Shift-Alt-T
 - Settings / IDE Settings / File Types / Ignore Files and Folders : add ";.settings;.project;.classpath"
+
+#### Javadoc
+
+- create/update Javadoc
+  - regular: just type /** and the Enter
+  - Assign Alt-Shift-J to action *Fix doc comment* (Settings / Keymap)
+- Javadoc mouse hover: Settings / Editor / General / Show quick documentation on mouse move
+
+
+#### Navigation
+
+Quick Hierarchy: Hierarchy Tool Window (Alt-8), appears only after Hierarchy has been created (Navigate / Type Hierarchy)
 
 
 ## Key Bindings
@@ -76,6 +102,10 @@ http://plugins.jetbrains.com/plugin/6546
 
 Instead of Eclipse's Ctrl-T, use the gutter icons (left of the declaration)
 
+## JVM config
+
+- for JUnit tests: Run/Debug Configurations / Default / JUnit / VM Options
+  -Xms1000M -Xmx1000M -XX:MaxPermSize=512M
 
 ## JBoss config
 
@@ -84,3 +114,8 @@ Instead of Eclipse's Ctrl-T, use the gutter icons (left of the declaration)
 - c:\Daten\P\Java\jboss-eap-6.3\
 - Configure logs: Server Log, c:\Daten\P\Java\jboss-eap-6.3\standalone\log\server.log
 - Deployment: add the EARs
+
+## Datasource
+
+- Tool Window Database, add datasource, Oracle (driver must be loaded first)
+
