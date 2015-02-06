@@ -14,16 +14,29 @@ git notes
   With complete hash and the internal date format
   git log --pretty=format:"%H %ad %ai %an: %s" --date=raw --all
 
-- git diff HEAD
-
-  The HEAD is a pointer that holds your position within all your different commits.
-  By default HEAD points to your most recent commit, so it can be used as a quick
-  way to reference that commit without having to look up the SHA.
-
 - `git branch` or `git branch --all`
 - `git remote` or `git remote -v`
 
 - `git show-ref`
+
+## Diffing
+
+- git diff : shows what is not added yet
+- git diff --cached : shows what would be committed
+- git diff --staged : synonym to --cached
+- git diff HEAD : difference of workspace to HEAD (staged and unstaged)
+
+Use `git difftool` instead of `git diff` to use an external diff tool (e.g. Beyond Compare)
+
+
+## glossar
+
+- The HEAD is a pointer that holds your position within all your different commits.
+  By default HEAD points to your most recent commit, so it can be used as a quick
+  way to reference that commit without having to look up the SHA.
+
+
+
 
 
 ## repositories
@@ -105,6 +118,7 @@ Branches are stored in .git/refs
 - fast forward: current branch had no modifications after the branching point
 - `git merge oss` merges the branch `oss` into the current branch and commits (if no conflicts)
 - `git merge --no-commit oss` merges the branch `oss` into the current branch, but does not commit
+- edit conflict with Beyond Compare: `git mergetool`
 
 
 ### remote repo
@@ -153,11 +167,15 @@ Branches are stored in .git/refs
 
 ### Beyond Compare
 
-git config --global diff.tool bc3
-git config --global difftool.bc3.path "c:/Program Files (x86)/Beyond Compare 3/bcomp.exe"
+- This is for all platforms
+  git config --global diff.tool bc3
+  git config --global merge.tool bc3
+  git config --global difftool.prompt false
 
-git config --global merge.tool bc3
-git config --global mergetool.bc3.path "c:/Program Files (x86)/Beyond Compare 3/bcomp.exe"
+- This is for Windows only (Linux / Mac assume /usr/local/bin/bcomp)
+  git config --global difftool.bc3.path "c:/Program Files (x86)/Beyond Compare 3/bcomp.exe"
+  git config --global mergetool.bc3.path "c:/Program Files (x86)/Beyond Compare 3/bcomp.exe"
+
 
 #### for TortoiseGit
 
