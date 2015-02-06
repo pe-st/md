@@ -52,7 +52,7 @@ create a new remote for anexisting local repo:
 - on the remote:
   `git init --bare jboss_standalone.git`
 - on the local:
-  `git remote add origin K:/Bielsave_Public/Teams/afd1/Tools/jboss_standalone.git`
+  `git remote add origin file:////DOMAIN/network/path/to/jboss_standalone.git`
   `git push origin master`
 
 
@@ -103,6 +103,8 @@ Branches are stored in .git/refs
 ### merge
 
 - fast forward: current branch had no modifications after the branching point
+- `git merge oss` merges the branch `oss` into the current branch and commits (if no conflicts)
+- `git merge --no-commit oss` merges the branch `oss` into the current branch, but does not commit
 
 
 ### remote repo
@@ -122,6 +124,14 @@ Branches are stored in .git/refs
 - drop a stash: `git stash drop`
 
 
+## Configuration
+
+### Proxy
+
+- git config --global http.proxy http://localhost:3128
+- git config --global https.proxy http://localhost:3128
+
+
 ## SSH
 
 ### SSH with PLink
@@ -134,6 +144,13 @@ Branches are stored in .git/refs
 
 ## Tools
 
+### msysgit (Git for Windows)
+
+- change home directory from `U:/` to `c:/Daten/P/Git/home/pesche/` :
+  - mkdir `home/pesche` inside the Git installation (`c:/Daten/P/Git` for me)
+  - edit `c:/Daten/P/Git/etc/profile` : replace `HOME="$(cd "$HOME" ; pwd)"` with `HOME="/home/pesche"`
+
+
 ### Beyond Compare
 
 git config --global diff.tool bc3
@@ -141,6 +158,15 @@ git config --global difftool.bc3.path "c:/Program Files (x86)/Beyond Compare 3/b
 
 git config --global merge.tool bc3
 git config --global mergetool.bc3.path "c:/Program Files (x86)/Beyond Compare 3/bcomp.exe"
+
+#### for TortoiseGit
+
+Settings/Diff Viewer  : `"C:\Program Files (x86)\Beyond Compare 3\BComp.exe" %base %mine /title1=%bname /title2=%yname /leftreadonly`
+Settings/DV/Merge Tool: `"C:\Program Files (x86)\Beyond Compare 3\BComp.exe" %mine %theirs %base %merged /title1=%yname /title2=%tname /title3=%bname /title4=%mname`
+
+#### for SourceTree (Windows)
+
+Tools / Options / Diff : just select Beyond Compare in the dropdowns for external Diff/Merge
 
 
 ## SVN

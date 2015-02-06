@@ -50,6 +50,27 @@ Comment Block (Ctrl-/) works only with the / on the numpad (https://youtrack.jet
 You can rename them (Refactor / Rename) to something unique
 
 
+## Building
+
+### IntelliJ 'make project'
+
+- <kbd>Ctrl-F9</kbd> : Make Project
+- <kbd>Shift-Ctrl-F9</kbd> : Compile <compilation_scope> (current project/module/package etc)
+- difference 'make project' and 'compile project' :
+  - compile : all files in scope
+  - make : only changed files and dependent files
+
+### Problems
+
+- The Project Tool Window has a dropdown containing 'problems'
+
+
+### Cleanup
+
+- maven clean
+- File / Invalidate Caches
+
+
 ## IntelliJ and Eclipse
 
 ### Eclipse Code Formatter plugin
