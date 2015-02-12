@@ -45,8 +45,14 @@ Use `git difftool` instead of `git diff` to use an external diff tool (e.g. Beyo
 - initial download repo: `git clone <URL>`
 - get, don't merge: `git fetch`
 - get and merge: `git pull` or `git pull origin master`
+  - without automatic commit: `git pull --rebase`
+    (or: `git pull --no-commit` )
+  - remember this behaviour: `git config --global branch.autosetuprebase always`
 - upload: `git push` or `git push -u origin master`
   The -u tells Git to remember the parameters, so that next time we can simply run git push and Git will know what to do
+- if the (current) branch isn't tracked (you forgot `-u` when pushing):
+  `git branch -u origin/master`
+
 
 ### import local repo in GitHub
 
