@@ -185,8 +185,8 @@ Branches are stored in .git/refs
 
 #### for TortoiseGit
 
-Settings/Diff Viewer  : `"C:\Program Files (x86)\Beyond Compare 3\BComp.exe" %base %mine /title1=%bname /title2=%yname /leftreadonly`
-Settings/DV/Merge Tool: `"C:\Program Files (x86)\Beyond Compare 3\BComp.exe" %mine %theirs %base %merged /title1=%yname /title2=%tname /title3=%bname /title4=%mname`
+- Settings/Diff Viewer  : `"C:\Program Files (x86)\Beyond Compare 3\BComp.exe" %base %mine /title1=%bname /title2=%yname /leftreadonly`
+- Settings/DV/Merge Tool: `"C:\Program Files (x86)\Beyond Compare 3\BComp.exe" %mine %theirs %base %merged /title1=%yname /title2=%tname /title3=%bname /title4=%mname`
 
 #### for SourceTree (Windows)
 

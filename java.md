@@ -94,7 +94,7 @@ http://developer.apple.com/tools/usingeclipse.html
   - interface-Klassen können von mehreren interfaces erben (mit "extends") (!)
   - "tagging" Interfaces ohne Methoden (vgl. Serializable)
 - Verschachtelte Klassen
-  - Scope-Operator ist . statt :: (bzw $ für den Filenamen: Outer$Inner.class)
+  - Scope-Operator ist `.` statt `::` (bzw `$` für den Filenamen: `Outer$Inner.class`)
   - auch in Methoden (local inner class) und Blöcken
   - anonyme Klassen inkl. Vererbung (grob verwandt mit anonymen structs: struct {...} variable;)
   - innere Klassen haben Zugriff auf alle Elemente der äusseren Klasse;
@@ -110,7 +110,7 @@ http://developer.apple.com/tools/usingeclipse.html
     ist abgeleitet von Throwable
   - Error ist auch von Throwable abgeleitet (und sollte nocht behandelt werden)
   - es gibt fertige Methode zur Stack-Trace-Behandlung
-  - rethrow mit parameter: "throw e"
+  - rethrow mit parameter: `throw e`
   - "checked exceptions" : Exception specifications sind zwingend,
     ausser von Error und RuntimeException abgeleitete Klassen
   - exception chaining: frühere Exceptions ("history") in neuen Exceptions speichern
@@ -141,6 +141,7 @@ http://developer.apple.com/tools/usingeclipse.html
     Wenn man es trotzdem probiert: UnsupportedOperationException
   - veraltet: Vector/Hashtable/Stack, Enumeration (alte Iteratoren)
   - Gegenüberstellung:
+    ```
     |--------------+-----------------|
     | C++          | Java            |
     |--------------+-----------------|
@@ -160,7 +161,7 @@ http://developer.apple.com/tools/usingeclipse.html
     |              | IdentityHashMap |
     | vector<bool> | BitSet          |
     |--------------+-----------------|
-
+    ```
 - I/O
   - seit Java 1.1 char-oriented IO (Unicode) statt byte-oriented:
     Input-/Outputstream sind byte-oriented, Reader/Writer Zeichenorientiert
@@ -217,12 +218,12 @@ Konkrete Einfachst-Impl von interfaces: SimpleXxx
 
 Iterable
 
-## Präsentation 2014-06-27 Java 7/8 Philpp Marschall von PASS/netcetera
+## Präsentation 2014-06-27 Java 7/8 Philipp Marschall von PASS/netcetera
 
-github/marschall
-github/netcetera
+- https://github.com/marschall
+- https://github.com/netcetera
 
-try-with-resources (kein finally mehr), Klasse muss AutoClosable implementieren
+- try-with-resources (kein finally mehr), Klasse muss AutoClosable implementieren
   (besser selbst ein NonThrowingAutoClosable machen)
 
 ### java.nio
