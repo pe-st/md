@@ -148,8 +148,13 @@ Branches are stored in .git/refs
 
 ### Proxy
 
-- git config --global http.proxy http://localhost:3128
-- git config --global https.proxy http://localhost:3128
+- `git config --global http.proxy http://localhost:3128`
+- `git config --global https.proxy http://localhost:3128`
+
+### Email
+
+- `git config --global user.name "Peter Steiner"`
+- `git config --global user.email unistein+n32393@gmail.com`
 
 
 ## SSH
