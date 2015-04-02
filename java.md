@@ -278,6 +278,15 @@ Method References (:: operator) kann anstelle eines Lambdas verwendet werden
 
 
 
+## Java EE
+
+### Java Batch JSR-352
+
+Differences to Spring Batch: https://blog.codecentric.de/en/2013/07/spring-batch-and-jsr-352-batch-applications-for-the-java-platform-differences/
+
+
+
+
 ## javadoc
 
 ### 2014

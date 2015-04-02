@@ -5,10 +5,19 @@ docker
 
 Note: if you are using a remote Docker daemon, such as Boot2Docker, then do not type the sudo before the docker commands shown in the documentation's examples.
 
+Artifactory has docker extension
+
 
 ## Docker Hub
 
 docker login
+
+### Useful images
+
+fedora
+ubuntu
+jboss/wildfly-admin
+
 
 
 ## Basics
