@@ -173,7 +173,7 @@ Branches are stored in .git/refs
 
 ### Aliases
 
-- `git config alias.l "log --color --pretty=format:'%h %C(green)%ai%Creset %C(blue)%ae%Creset %s%C(red)%d%Creset'"`
+- `git config --global alias.l "log --color --pretty=format:'%h %C(green)%ai%Creset %C(blue)%ae%Creset %s%C(red)%d%Creset'"`
 
 
 ## SSH
