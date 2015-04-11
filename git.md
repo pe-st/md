@@ -8,11 +8,20 @@ git notes
 - git remote [-v]
 
 - git log
+  Uses the default log format (see format.pretty)
+  git log --all
   git log --pretty=format:"%h %s" --graph
   With author date and name
   git log --pretty=format:"%h %ai %an: %s" --all
+  With author date and email
+  git log --pretty=format:"%h %ai %ae: %s" --all
   With complete hash and the internal date format
   git log --pretty=format:"%H %ad %ai %an: %s" --date=raw --all
+
+  More examples
+  git log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+  git log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  git log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
 
 - `git branch` or `git branch --all`
 - `git remote` or `git remote -v`
@@ -146,6 +155,8 @@ Branches are stored in .git/refs
 
 ## Configuration
 
+- `git config --global --unset format.pretty` Deletes a config (here pretty.format)
+
 ### Proxy
 
 - `git config --global http.proxy http://localhost:3128`
@@ -155,6 +166,14 @@ Branches are stored in .git/refs
 
 - `git config --global user.name "Peter Steiner"`
 - `git config --global user.email unistein+n32393@gmail.com`
+
+### Pretty Format
+
+- `git config --global format.pretty "format:%h %ai %ae: %s"`
+
+### Aliases
+
+- `git config alias.l "log --color --pretty=format:'%h %C(green)%ai%Creset %C(blue)%ae%Creset %s%C(red)%d%Creset'"`
 
 
 ## SSH
