@@ -186,6 +186,51 @@ Branches are stored in .git/refs
 - git clone ssh://<putty-session-name>/path/to/repo
 
 
+## Rewriting History
+
+### fix last (non-pushed) commit
+
+- fix the files
+- stage the files
+- `git commit --amend`
+
+### changing wrong author info
+
+```
+git filter-branch --env-filter '
+    if test "$GIT_AUTHOR_EMAIL" = "tksnp@..."
+    then
+        GIT_AUTHOR_EMAIL=unistein+n32393@gmail.com
+        export GIT_AUTHOR_EMAIL
+    fi
+    if test "$GIT_COMMITTER_EMAIL" = "tksnp@..."
+    then
+        GIT_COMMITTER_EMAIL=unistein+n32393@gmail.com
+        export GIT_COMMITTER_EMAIL
+    fi
+    if test "$GIT_AUTHOR_NAME" = "unknown"
+    then
+        export GIT_AUTHOR_NAME="Peter Steiner"
+    fi
+    if test "$GIT_COMMITTER_NAME" = "unknown"
+    then
+        export GIT_COMMITTER_NAME="Peter Steiner"
+    fi
+' -- --all
+```
+
+If all went well: remove the backup from filter-branch
+- `git update-ref -d refs/original/refs/heads/master`
+- `git update-ref -d refs/original/refs/remotes/origin/master`
+
+If you have to push it (be careful here, your coworkers won't like this!)
+- `git push --force --dry-run`
+- `git push --force`
+
+Your coworkers must pull it with rebasing!
+- `git pull --rebase`
+
+
 ## Tools
 
 ### msysgit (Git for Windows)
@@ -232,7 +277,7 @@ corresponding line in .git/config:
 
 ```
 [svn-remote "svn"]
-    ignore-paths = ^(?:AFO|static_files) 
+    ignore-paths = ^(?:AFO|static_files)
 ```
 
 change these to .git/config:
