@@ -218,6 +218,19 @@ Konkrete Einfachst-Impl von interfaces: SimpleXxx
 
 Iterable
 
+## Libraries
+
+### XML
+
+StAX: Streaming API fo XML; https://docs.oracle.com/javase/tutorial/jaxp/stax/
+- Cursor API: XMLStreamReader
+- Event API: XMLEventReader
+
+XMLStreamReader is more efficient, but XMLEventReader is easier to use, because all the information related to a particular event is encapsulated in a returned XMLEvent object. However, the disadvantage of the event approach is the extra overhead of creating objects for every event, which consumes both time and memory.
+
+Note: XMLEventReader example use in fileloader25/xml/BaseXMLProcessor.java
+
+
 ## Präsentation 2014-06-27 Java 7/8 Philipp Marschall von PASS/netcetera
 
 - https://github.com/marschall
