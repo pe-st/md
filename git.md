@@ -76,7 +76,7 @@ Clone into new directory, mv the .git folder
 
 ### remotes
 
-create a new remote for anexisting local repo:
+create a new remote for an existing local repo:
 - on the remote:
   `git init --bare jboss_standalone.git`
 - on the local:
@@ -135,6 +135,9 @@ Branches are stored in .git/refs
 - `git merge --no-commit oss` merges the branch `oss` into the current branch, but does not commit
 - edit conflict with Beyond Compare: `git mergetool`
 
+### cherry pick
+
+- `git cherry-pick --no-commit f4343dc...` Copy one individual commit from another branch to the current one:
 
 ### remote repo
 
@@ -173,7 +176,8 @@ Branches are stored in .git/refs
 
 ### Aliases
 
-- `git config --global alias.l "log --color --pretty=format:'%h %C(green)%ai%Creset %C(blue)%ae%Creset %s%C(red)%d%Creset'"`
+- `git config --global alias.l "log --color --pretty=format:'%h %C(green)%ai%Creset %C(yellow)%ae%Creset %s%C(red)%d%Creset'"`
+  (on windows `yellow` is more readable than `blue`)
 
 
 ## SSH
