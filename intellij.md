@@ -5,6 +5,11 @@
 Manual proxy : localhost, port 3128
 Exclusions see Wiki
 
+## Config : File / Other Settings / Default Settings / ... / Maven
+
+- Maven Home directory (or set it with M2_HOME): C:\Daten\P\maven3
+- User settings file: C:\Daten\P\maven3\conf\settings.xml
+
 ## Config : File / Project Structure / Platform Settings
 
 - Platform SDKs
@@ -18,11 +23,6 @@ Use also the Default settings ('default' project)
 
 - Project SDK
 - Project language level (is usually 6 instead of 7 with a JDK 7)
-
-### Config : File / Settings / ... / Maven
-
-- Maven Home directory (or set it with M2_HOME): C:\Daten\P\maven3
-- User settings file: C:\Daten\P\maven3\conf\settings.xml
 
 ### Niceties
 

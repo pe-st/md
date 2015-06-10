@@ -111,10 +111,15 @@ After changing the line endings in `core.autocrlf` or `.gitattributes` repopulat
 - create a new branch: `git branch <branchname>`
   . not from HEAD: `git branch <branchname> <commit>`
 - switch to a branch: `git checkout <branchname>`
+- local branch from remote branch (tracking branch): `git checkout -b <branchname> origin/<branchname>`
+  or `git checkout --track origin/<branchname>`
 - combine creation/switch: `git checkout -b <branchname>`
 - merge a branch into the current branch: `git merge <branchname>`
 - delete a branch: `git branch -d <branchname>`
   (if there are unmerged changes: `git branch --force -d <branchname>`)
+- delete a remote branch: `git push origin :<branch>`
+- diff two branches: `git diff master..<branchname>`
+  or `git diff --name-status master..<branchname>`
 
 ### under the hood
 
@@ -123,9 +128,6 @@ Branches are stored in .git/refs
 - master is in .git/refs/heads/master
 - local branches are in .git/refs/heads/<localbranch>
 - remote branches are in .git/refs/remotes, e.g. .git/refs/remotes/origin/trunk
-- local branch from remote branch (tracking branch): `git checkout -b b42 origin/b42`
-  or `git checkout --track origin/b42`
-- delete a remote branch: `git push origin :<branch>`
 
 
 ### merge
@@ -134,6 +136,9 @@ Branches are stored in .git/refs
 - `git merge oss` merges the branch `oss` into the current branch and commits (if no conflicts)
 - `git merge --no-commit oss` merges the branch `oss` into the current branch, but does not commit
 - edit conflict with Beyond Compare: `git mergetool`
+- `git merge --squash master` merges all commits from master into the current branch into one commit
+
+
 
 ### cherry pick
 
