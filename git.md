@@ -3,25 +3,25 @@ git notes
 
 ## information commands
 
-- git config -l
-- git status
-- git remote [-v]
+- `git config -l`
+- `git status`
+- `git remote [-v]`
 
-- git log
+- `git log`
   Uses the default log format (see format.pretty)
-  git log --all
-  git log --pretty=format:"%h %s" --graph
+  `git log --all`
+  `git log --pretty=format:"%h %s" --graph`
   With author date and name
-  git log --pretty=format:"%h %ai %an: %s" --all
+  `git log --pretty=format:"%h %ai %an: %s" --all`
   With author date and email
-  git log --pretty=format:"%h %ai %ae: %s" --all
+  `git log --pretty=format:"%h %ai %ae: %s" --all`
   With complete hash and the internal date format
-  git log --pretty=format:"%H %ad %ai %an: %s" --date=raw --all
+  `git log --pretty=format:"%H %ad %ai %an: %s" --date=raw --all`
 
   More examples
-  git log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
-  git log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  git log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
+  `git log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'`
+  `git log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative`
+  `git log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit`
 
 - `git branch` or `git branch --all`
 - `git remote` or `git remote -v`
@@ -30,10 +30,10 @@ git notes
 
 ## Diffing
 
-- git diff : shows what is not added yet
-- git diff --cached : shows what would be committed
-- git diff --staged : synonym to --cached
-- git diff HEAD : difference of workspace to HEAD (staged and unstaged)
+- `git diff` : shows what is not added yet
+- `git diff --cached` : shows what would be committed
+- `git diff --staged` : synonym to --cached
+- `git diff HEAD` : difference of workspace to HEAD (staged and unstaged)
 
 Use `git difftool` instead of `git diff` to use an external diff tool (e.g. Beyond Compare)
 
@@ -90,6 +90,7 @@ create a new remote for an existing local repo:
 - unstage a file: `git reset <file>`
 - revert a file to the state of the last commit: `git checkout -- <file>`
   (`--` to protect from changing to a branch called `<file>`)
+- remove untracked files: `git clean --dry-run -f` then `git clean -f`
 - remove a file from the repo (a branch): `git rm <file>`
 - commit what is staged: `git commit -m "comment"`
 - update last commit with stage: `git commit --amend`
@@ -136,6 +137,7 @@ Branches are stored in .git/refs
 - `git merge oss` merges the branch `oss` into the current branch and commits (if no conflicts)
 - `git merge --no-commit oss` merges the branch `oss` into the current branch, but does not commit
 - edit conflict with Beyond Compare: `git mergetool`
+- `git merge --abort` abort a merge with conflicts
 - `git merge --squash master` merges all commits from master into the current branch into one commit
 
 
