@@ -10,6 +10,11 @@ Exclusions see Wiki
 - Maven Home directory (or set it with M2_HOME): C:\Daten\P\maven3
 - User settings file: C:\Daten\P\maven3\conf\settings.xml
 
+## Config : File / Other Settings / Default Settings
+
+- Editor / Spelling / Dictionaries: add ao/tools/intellij folder
+
+
 ## Config : File / Project Structure / Platform Settings
 
 - Platform SDKs
@@ -38,6 +43,9 @@ Comment Block (Ctrl-/) works only with the / on the numpad (https://youtrack.jet
 
 ## Import Maven project
 
+Consider just opening the project?
+
+
 ### Settings
 
 - [x] Import maven projects automatically
@@ -48,6 +56,12 @@ Comment Block (Ctrl-/) works only with the / on the numpad (https://youtrack.jet
 ### modules have ugly names like adapter (1) (com.six-group.ao.tfo.atm.conkey)
 
 You can rename them (Refactor / Rename) to something unique
+
+
+## Using IntelliJ
+
+- Use the Packages View instead of the Project View
+
 
 
 ## Building
@@ -92,17 +106,22 @@ http://plugins.jetbrains.com/plugin/6546
   - Names count to use static import with '*' : 10
 
 
+### Eclipse formatting w/o plugin
+
+- Import order: http://stackoverflow.com/a/17194980/3686
+
+
 ### For eclipse users
 
-- Settings / IDE Settings / Keymap : Eclipse
+- Settings / Keymap : Eclipse
   - Switch to unit test (Navigate/Test) : Shift-Alt-T
-- Settings / IDE Settings / File Types / Ignore Files and Folders : add ";.settings;.project;.classpath"
+- Settings / Editor / File Types / Ignore Files and Folders : add ";.settings;.project;.classpath"
 
 #### Javadoc
 
 - create/update Javadoc
   - regular: just type /** and the Enter
-  - Assign Alt-Shift-J to action *Fix doc comment* (Settings / Keymap)
+  - Assign Alt-Shift-D to action *Fix doc comment* (Settings / Keymap)
 - Javadoc mouse hover: Settings / Editor / General / Show quick documentation on mouse move
 
 
@@ -118,6 +137,16 @@ Quick Hierarchy: Hierarchy Tool Window (Alt-8), appears only after Hierarchy has
 - duplicate line: Ctrl-D
 - move text selection: Shift-Alt-Up/Down
 - move statement/method etc.: Shift-Ctrl-Up/Down
+- Navigate Class (Eclipse Shift-Ctrl-T): Ctrl-N
+- Display definition
+- Reformat Ctrl-Alt-L / Reindent Ctrl-Alt-I
+
+### missing key bindings
+
+Define them in Settings / Keymap; the first is the 'action')
+
+- Fix doc comment : Alt-Shift-D
+
 
 ## Navigating the source
 
@@ -132,8 +161,8 @@ Instead of Eclipse's Ctrl-T, use the gutter icons (left of the declaration)
 
 - Run / Edit configurations
 - Add Configuration / JBoss Server / Local
-- c:\Daten\P\Java\jboss-eap-6.3\
-- Configure logs: Server Log, c:\Daten\P\Java\jboss-eap-6.3\standalone\log\server.log
+- c:\Daten\P\Java\jboss-eap-6.4\
+- Configure logs: Alias "Server Log", Location: c:\Daten\P\Java\jboss-eap-6.4\standalone\log\server.log
 - Deployment: add the EARs
 
 ## Datasource

@@ -175,7 +175,7 @@ Branches are stored in .git/refs
 ### Email
 
 - `git config --global user.name "Peter Steiner"`
-- `git config --global user.email unistein+n32393@gmail.com`
+- `git config --global user.email unistein+n33996@gmail.com`
 
 ### Pretty Format
 
