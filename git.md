@@ -51,6 +51,7 @@ Use `git difftool` instead of `git diff` to use an external diff tool (e.g. Beyo
 ## repositories
 
 - new repo: `git init`
+  (or: `git init --bare reponame.git`)
 - initial download repo: `git clone <URL>`
 - get, don't merge: `git fetch`
 - get and merge: `git pull` or `git pull origin master`
@@ -185,6 +186,29 @@ Branches are stored in .git/refs
 
 - `git config --global alias.l "log --color --pretty=format:'%h %C(green)%ai%Creset %C(yellow)%ae%Creset %s%C(red)%d%Creset'"`
   (on windows `yellow` is more readable than `blue`)
+
+
+## Git Dojo
+
+- Git Commandline (Editor-Variable?)
+- GitHub zeigen (Vorbereitung: Account anlegen)
+- GUI zeigen
+- Beyond Compare Integration
+- Workflow
+- Tutorials: atlassian, git-scm, rogerdudler, gitimmersion
+
+### Aufgaben
+
+- Initiale Config
+  - Email-Adresse
+  - CNTLM
+- Commits auf origin/master und im lokalen Repo
+  - was passiert bei pull mit und ohne revert?
+- auf origin/master hat jemand Files gelöscht: wie reparieren?
+  - git clone
+  - git revert
+  - git push
+  - vgl. http://christoph.ruegg.name/blog/git-howto-revert-a-commit-already-pushed-to-a-remote-reposit.html
 
 
 ## SSH
