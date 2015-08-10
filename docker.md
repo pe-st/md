@@ -26,7 +26,12 @@ jboss/wildfly-admin
 
 - `docker info`
 - `docker version`
-- `docker images` locally available images
+- `docker images` locally available images ( _base_ or _root_ images like `ubuntu` and _user_ images like `training/webapp`):
+
+        $ docker images
+        REPOSITORY       TAG      IMAGE ID      CREATED      VIRTUAL SIZE
+        training/webapp  latest   fc77f57ad303  3 weeks ago  280.5 MB
+        ubuntu           13.10    5e019ab7bf6d  4 weeks ago  180 MB
 
 ### Running containers
 
@@ -35,6 +40,11 @@ jboss/wildfly-admin
 - `docker run -it ubuntu:14.04 bash` run a specific variant
 - `docker run -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"`
   daemonize (keep running in background)
+
+### Finding containers
+
+- `docker search gcc`
+
 
 ### Dynamic Info
 
@@ -62,7 +72,17 @@ jboss/wildfly-admin
 
 - with boot2docker the IP address is `boot2docker ip`
 
+### Mapping directories
 
+- `docker run -v `
+- `docker run -w /usr/src/pesche` use `/usr/src/pesche` as working directory inside the container
+
+
+## Using docker to have a GCC host
+
+### Compiling with docker
+
+- `docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:4.7 gcc -o ici_bienne ici_bienne.c`
 
 
 ## Linux on Mac
