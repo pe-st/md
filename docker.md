@@ -8,6 +8,26 @@ Note: if you are using a remote Docker daemon, such as Boot2Docker, then do not 
 Artifactory has docker extension
 
 
+## Docker Architecture
+
+https://docs.docker.com/docker/introduction/understanding-docker/
+
+### Docker Images
+- A Docker image is a read-only template. Images are used to create Docker containers.
+- Docker images are the *build* component of Docker.
+- Each image consists of a series of layers, starting from a base image (e.g. `ubuntu`)
+- A *Dockerfile* contains instructions to build a Docker image
+
+### Docker Registries
+- Docker registries hold images. The public Docker registry is called Docker Hub.
+- Docker registries are the *distribution* component of Docker.
+
+### Docker Containers
+- A Docker container holds everything that is needed for an application to run. Each container is created from a Docker image.
+- Docker containers are the *run* component of Docker.
+- When Docker runs a container from an image, it adds a read-write layer on top of the image in which your application can then run.
+
+
 ## Docker Hub
 
 docker login
@@ -27,7 +47,6 @@ jboss/wildfly-admin
 - `docker info`
 - `docker version`
 - `docker images` locally available images ( _base_ or _root_ images like `ubuntu` and _user_ images like `training/webapp`):
-
         $ docker images
         REPOSITORY       TAG      IMAGE ID      CREATED      VIRTUAL SIZE
         training/webapp  latest   fc77f57ad303  3 weeks ago  280.5 MB
@@ -41,7 +60,7 @@ jboss/wildfly-admin
 - `docker run -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"`
   daemonize (keep running in background)
 
-### Finding containers
+### Finding Images
 
 - `docker search gcc`
 
@@ -76,6 +95,18 @@ jboss/wildfly-admin
 
 - `docker run -v `
 - `docker run -w /usr/src/pesche` use `/usr/src/pesche` as working directory inside the container
+
+## Building Images
+
+- Have a `Dockerfile` and possibly other files in a dedicated directory
+- `docker build .` in this directory:
+        $ docker build .
+        ...
+        Successfully built 29e2923d226b
+        $ docker images
+        REPOSITORY                          TAG                 IMAGE ID            CREATED              VIRTUAL SIZE
+        <none>                              <none>              29e2923d226b        32 seconds ago       902.4 MB
+        ...
 
 
 ## Using docker to have a GCC host
