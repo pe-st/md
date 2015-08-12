@@ -68,6 +68,7 @@ jboss/wildfly-admin
 ### Dynamic Info
 
 - `docker ps` show running containers
+- `docker ps -a` show all containers
 - `docker top <id>` show processes
 - `docker logs <id>` show output
 - `docker inspect <id>` show confg and status info (JSON)
@@ -93,7 +94,7 @@ jboss/wildfly-admin
 
 ### Mapping directories
 
-- `docker run -v `
+- `docker run -v /path/host:/path/containers`
 - `docker run -w /usr/src/pesche` use `/usr/src/pesche` as working directory inside the container
 
 ## Building Images
@@ -107,13 +108,20 @@ jboss/wildfly-admin
         REPOSITORY                          TAG                 IMAGE ID            CREATED              VIRTUAL SIZE
         <none>                              <none>              29e2923d226b        32 seconds ago       902.4 MB
         ...
+- `docker tag <id> foha/devtoolset3` to name (or `tag` an image)
+- `docker build -t foha/devtoolset3 .` builds the image and tags it
 
 
 ## Using docker to have a GCC host
 
 ### Compiling with docker
 
-- `docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:4.7 gcc -o ici_bienne ici_bienne.c`
+- `docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp foha/devtoolset3 /opt/rh/devtoolset-3/root/bin/gcc -o ici_bienne ici_bienne.c`
+
+### Installing a local RPM into a container
+
+- `docker run -v "$PWD":/usr/src/myapp -it foha/devtoolset3 bash`
+  `[root@6bcffaddb3d7 /]# yum --nogpgcheck localinstall /usr/src/myapp/mySoftwarePackage.x86_64.rpm`
 
 
 ## Linux on Mac
