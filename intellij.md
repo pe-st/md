@@ -130,6 +130,19 @@ http://plugins.jetbrains.com/plugin/6546
 Quick Hierarchy: Hierarchy Tool Window (Alt-8), appears only after Hierarchy has been created (Navigate / Type Hierarchy)
 
 
+## Plugins
+
+### Settings Repository
+
+Stores settings on GitHub (or elsewhere), using access token
+
+https://plugins.jetbrains.com/plugin/7566
+https://github.com/develar/settings-repository
+
+- local git repo clone: %idea.config.path%/config/settingsRepository/repository/.git
+  (idea.config.path = %HOME%/.IntelliJIdea14 or ~/Library/Preferences/IntelliJIdeaXX)
+
+
 ## Key Bindings
 
 - create Test (Alt-Enter) / create new test (Shift-Ctrl-T)
