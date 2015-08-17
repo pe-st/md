@@ -116,6 +116,7 @@ jboss/wildfly-admin
 
 ### Compiling with docker
 
+- `docker run --rm -v "$PWD":/usr/src/work -w /usr/src/work -it foha/devtoolset3 bash`
 - `docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp foha/devtoolset3 /opt/rh/devtoolset-3/root/bin/gcc -o ici_bienne ici_bienne.c`
 
 ### Installing a local RPM into a container
