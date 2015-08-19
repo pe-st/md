@@ -49,6 +49,36 @@ int main() {
 }
 ```
 
+### Tables
+
+See https://help.github.com/articles/github-flavored-markdown/#tables
+
+In short:
+
+- the first line must be followed by a line with the dashes (at least *three* dashes per column!)
+- the colons in the 'dash' line control the alignment
+- the pipe `|` at the start end end of the line is optional
+
+    ```
+    | Left-Aligned  | Center Aligned  | Right Aligned |
+    | :------------ |:---------------:| -----:|
+    | col 3 is      | some wordy text | $1600 |
+    | col 2 is      | centered        |   $12 |
+    | zebra stripes | are neat        |    $1 |
+      leftmost pipe | is optional     |   yes |
+      rightmost one | is optional     | too
+    ```
+
+becomes
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+  leftmost pipe | is optional     |   yes |
+  rightmost one | is optional     | too
+
 
 ## Markdown tricks
 
