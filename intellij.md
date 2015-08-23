@@ -154,6 +154,19 @@ https://github.com/develar/settings-repository
 - Display definition
 - Reformat Ctrl-Alt-L / Reindent Ctrl-Alt-I
 
+### debugging
+
+F7 : step into
+Alt-Shift-F7 : force step into
+F8 : step over
+Shift-F8 : step out
+F9 : resume
+Ctrl-F5 : rerun
+Ctrl-F2 : stop
+Shift-F9 : debug
+Shift-F10 : run
+
+
 ### missing key bindings
 
 Define them in Settings / Keymap; the first is the 'action')
