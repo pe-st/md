@@ -136,12 +136,15 @@ Branches are stored in .git/refs
 
 - fast forward: current branch had no modifications after the branching point
 - `git merge oss` merges the branch `oss` into the current branch and commits (if no conflicts)
-- `git merge --no-commit oss` merges the branch `oss` into the current branch, but does not commit
+- `git merge --no-commit --no-ff oss` merges the branch `oss` into the current branch, but does not commit
 - edit conflict with Beyond Compare: `git mergetool`
 - `git merge --abort` abort a merge with conflicts
 - `git merge --squash master` merges all commits from master into the current branch into one commit
 
+### compare branches
 
+- simple with SourceTree (right-click on a branch, "Diff against current")
+- Merge without commit (see above)
 
 ### cherry pick
 
