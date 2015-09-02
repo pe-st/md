@@ -62,6 +62,37 @@ You can rename them (Refactor / Rename) to something unique
 
 - Use the Packages View instead of the Project View
 
+### Tips unsorted
+
+From https://www.youtube.com/watch?v=h8wRC7Qkcb8
+
+double Shift = Search Anywhere (Goto Anything in Sublime?)
+Disable Navigation Bar and use Alt-Left : popup navigation bar
+Disable Tabs
+Cmd-E : recent files (UNterschied zu Ctrl-Tab?)
+S-C-i ähnlich wie Cmd-Q, aber zeigt Source in Popup
+
+NAvigate forward/backward (Ctrl-ALt-l/r): ähnlich wie Ctrl-Tab?
+S-Cmd-F12 : maximize Editor
+S-C-P : Presentation Mode
+S-F4 Extract Window (to move it on 2nd screen)
+Extend Selection (Ctrl-W on Windows, Mac?)
+
+"Multi Caret" is the only thing in IJ that you must use the mouse
+What is the key to introduce local variable?
+Smart completino (e.g. something inheriting) Shift-Ctrl-Space
+Completion: e.g. notnull introduces if(x!=null) ...
+colored box upper right (green when no problems in file...): right-click it; together with Shift-F2? (Navigate next)
+Use Ctrl-T for Refactorings?
+Inspections can be run separately (via Find Action?)
+Structural Search, e.g. to find empty catch blocks
+chronon plugin to step back in time in the debugger
+Quick Switch Scheme Shortcut? (Ctrl-` not possible with swiss german keyboard)-> for pair programming
+Custom Menus: "Quick Lists"
+Alt-F12 : Terminal
+Restful client (find via Find Action)
+Productivity Guide (Help Menu)
+
 
 
 ## Building
@@ -141,6 +172,14 @@ https://github.com/develar/settings-repository
 
 - local git repo clone: %idea.config.path%/config/settingsRepository/repository/.git
   (idea.config.path = %HOME%/.IntelliJIdea14 or ~/Library/Preferences/IntelliJIdeaXX)
+
+=> does not work well across operating systems or multiple machines
+=> manually managing the config directory with git is more flexible
+
+### Presentatino Assist
+
+- Displays other keyboard bindings
+- good for pair programming
 
 
 ## Key Bindings
