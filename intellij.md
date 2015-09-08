@@ -176,10 +176,14 @@ https://github.com/develar/settings-repository
 => does not work well across operating systems or multiple machines
 => manually managing the config directory with git is more flexible
 
-### Presentatino Assist
+### Presentation Assistant
 
 - Displays other keyboard bindings
 - good for pair programming
+
+### Lines Sorter
+
+- Default Binding: Alt-Shift-L (Edit / Sort Lines)
 
 
 ## Key Bindings
