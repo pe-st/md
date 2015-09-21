@@ -62,6 +62,10 @@ Use `git difftool` instead of `git diff` to use an external diff tool (e.g. Beyo
   The -u tells Git to remember the parameters, so that next time we can simply run git push and Git will know what to do
 - if the (current) branch isn't tracked (you forgot `-u` when pushing):
   `git branch -u origin/master`
+- stop tracking a branch (e.g. branch 'win') and delete the local branch:
+  `git config --unset branch.win.remote`
+  `git config --unset branch.win.merge`
+  `git branch -d win`
 
 
 ### import local repo in GitHub
@@ -179,7 +183,7 @@ Branches are stored in .git/refs
 ### Email
 
 - `git config --global user.name "Peter Steiner"`
-- `git config --global user.email unistein+n33996@gmail.com`
+- `git config --global user.email unistein+reinette@gmail.com`
 
 ### Pretty Format
 
