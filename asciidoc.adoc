@@ -1,0 +1,6 @@
+= AsciiDoc
+
+* http://asciidoc.org[AsciiDoc] is a markup language a little more powerful than Markdown
+* http://asciidoctor.org[Asciidoctor] is a popular implementation in Ruby
+* http://asciidoctor.org/news/2013/01/30/asciidoc-returns-to-github/[GitHub treats]
+  .adoc and .asciidoc files as AsciiDoc markup
