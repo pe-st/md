@@ -4,3 +4,4 @@
 * http://asciidoctor.org[Asciidoctor] is a popular implementation in Ruby
 * http://asciidoctor.org/news/2013/01/30/asciidoc-returns-to-github/[GitHub treats]
   .adoc and .asciidoc files as AsciiDoc markup
+* http://powerman.name/doc/asciidoc[AsciiDoc Cheatsheet] by Powerman
