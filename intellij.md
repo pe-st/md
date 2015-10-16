@@ -62,6 +62,10 @@ You can rename them (Refactor / Rename) to something unique
 
 - Use the Packages View instead of the Project View
 
+### Favourites
+
+Ctrl-Alt-V (extract variable) = introduce local variable
+
 ### Tips unsorted
 
 From https://www.youtube.com/watch?v=h8wRC7Qkcb8
