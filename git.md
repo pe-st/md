@@ -161,6 +161,18 @@ Branches are stored in .git/refs
   Git doesn't care what you name your remotes, but it's typical to name your main one `origin`.
 
 
+## tags
+
+Two flavours: annotated and lightweight
+
+- display tags: `git tags`
+- display the tag annotations (if any): `git show <tagname>`
+- create an annotated tag: `git tag -a <tagname> -m 'message'`
+- create a lightweight tag: `git tag <tagname>`
+- push a tag or all tags to the remote repo: `git push origin <tagname>` or `git push origin --tags`
+- "check out" a tag (more like creating a branch at a tag): `git checkout -b <branch> <tagname>`
+
+
 ## stash
 
 - store away some patches: `git stash`
