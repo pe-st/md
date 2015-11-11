@@ -3,7 +3,7 @@ git notes
 
 ## information commands
 
-- `git config -l`
+- `git config -l` (all entries) or `git config --global -l` (only entries from global config)
 - `git status`
 - `git remote [-v]`
 
