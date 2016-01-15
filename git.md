@@ -131,7 +131,9 @@ After changing the line endings in `core.autocrlf` or `.gitattributes` repopulat
 
 Branches are stored in .git/refs
 
-- master is in .git/refs/heads/master
+'refs' are References: a file per branch that contains just the SHA value of the last commit
+
+- master is in .git/refs/heads/master (i.e. it's just a local branch called 'master')
 - local branches are in .git/refs/heads/<localbranch>
 - remote branches are in .git/refs/remotes, e.g. .git/refs/remotes/origin/trunk
 
