@@ -78,7 +78,7 @@ jboss/wildfly-admin
 
 - `docker pull ubuntu` pre-load an image
 - `docker stop <id>` stop a running container politely
-  `restart`and `start` do what you expect
+  `restart` and `start` do what you expect
 - `docker rm <id>` delete a (stopped) container
 
 
@@ -123,6 +123,11 @@ jboss/wildfly-admin
 
 - `docker run -v "$PWD":/usr/src/myapp -it foha/devtoolset3 bash`
   `[root@6bcffaddb3d7 /]# yum --nogpgcheck localinstall /usr/src/myapp/mySoftwarePackage.x86_64.rpm`
+
+
+## Docker Repositories
+
+docker run -it artifactory.company.net/rhel bash
 
 
 ## Linux on Mac
