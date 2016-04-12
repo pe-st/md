@@ -65,6 +65,13 @@ You can rename them (Refactor / Rename) to something unique
 ### Favourites
 
 Ctrl-Alt-V (extract variable) = introduce local variable
+Alt-Q (view context info) = display current method
+
+
+### Quick Doc window can't be dismissed
+
+Unpin the window ("restore popup"), as "Tool Window" it is much more difficult to dismiss...
+
 
 ### Tips unsorted
 
@@ -76,7 +83,7 @@ Disable Tabs
 Cmd-E : recent files (UNterschied zu Ctrl-Tab?)
 S-C-i ähnlich wie Cmd-Q, aber zeigt Source in Popup
 
-NAvigate forward/backward (Ctrl-ALt-l/r): ähnlich wie Ctrl-Tab?
+Navigate forward/backward (Ctrl-ALt-l/r): ähnlich wie Ctrl-Tab?
 S-Cmd-F12 : maximize Editor
 S-C-P : Presentation Mode
 S-F4 Extract Window (to move it on 2nd screen)

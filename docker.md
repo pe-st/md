@@ -10,17 +10,23 @@ Artifactory has docker extension
 
 ## Docker Architecture
 
-https://docs.docker.com/docker/introduction/understanding-docker/
+https://docs.docker.com/engine/understanding-docker/
+
+Docker is client/server
+- the server is called the docker daemon
+- the docker command line utility is a client
 
 ### Docker Images
 - A Docker image is a read-only template. Images are used to create Docker containers.
 - Docker images are the *build* component of Docker.
 - Each image consists of a series of layers, starting from a base image (e.g. `ubuntu`)
 - A *Dockerfile* contains instructions to build a Docker image
+- specified by *repository:tag*, e.g. ubuntu:14.04; default tag is `latest`
 
 ### Docker Registries
 - Docker registries hold images. The public Docker registry is called Docker Hub.
 - Docker registries are the *distribution* component of Docker.
+- A registry can hold multiple repositories; the name for the *Official Repositories* is `library`
 
 ### Docker Containers
 - A Docker container holds everything that is needed for an application to run. Each container is created from a Docker image.
@@ -42,10 +48,12 @@ jboss/wildfly-admin
 
 ## Basics
 
+
+
 ### Info
 
 - `docker info`
-- `docker version`
+- `docker version` displays client and server versions
 - `docker images` locally available images ( _base_ or _root_ images like `ubuntu` and _user_ images like `training/webapp`):
         $ docker images
         REPOSITORY       TAG      IMAGE ID      CREATED      VIRTUAL SIZE
@@ -58,7 +66,11 @@ jboss/wildfly-admin
 - `docker run -it ubuntu bash` is interactive
 - `docker run -it ubuntu:14.04 bash` run a specific variant
 - `docker run -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"`
-  daemonize (keep running in background)
+  daemonize ('detached mode', keep running in background)
+
+- Detach ('quit') from an interactive container and keeping it running: Ctrl-P Ctrl-Q (only when the container was run with `-it`)
+- `docker reattach` Reattach to a detached container
+
 
 ### Finding Images
 
