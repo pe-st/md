@@ -162,17 +162,31 @@ Branches are stored in .git/refs
 
   Git doesn't care what you name your remotes, but it's typical to name your main one `origin`.
 
+### track/pull all branches
+
+    git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+    git fetch --all
+    git pull --all
 
 ## tags
 
 Two flavours: annotated and lightweight
+
+    Basically, lightweight tags are just pointers to specific commits. No further information is saved; on the other hand, annotated tags are regular objects, which have an author and a date and can be referred because they have their own SHA key.
+
+    If knowing who tagged what and when is relevant for you, then use annotated tags. If you just want to tag a specific point in your development, no matter who and when did that, then lightweight tags are good enough.
 
 - display tags: `git tags`
 - display the tag annotations (if any): `git show <tagname>`
 - create an annotated tag: `git tag -a <tagname> -m 'message'`
 - create a lightweight tag: `git tag <tagname>`
 - push a tag or all tags to the remote repo: `git push origin <tagname>` or `git push origin --tags`
+  (for git 1.8.3 and later: `git push --follow-tags` pushes tags and commits simultaneously)
 - "check out" a tag (more like creating a branch at a tag): `git checkout -b <branch> <tagname>`
+
+### create a tag for every branch
+
+    git branch | while read remote; do git checkout "$remote"; git tag "$remote"; done
 
 
 ## stash
@@ -208,6 +222,9 @@ Two flavours: annotated and lightweight
 - `git config --global alias.l "log --color --pretty=format:'%h %C(green)%ai%Creset %C(yellow)%ae%Creset %s%C(red)%d%Creset'"`
   (on windows `yellow` is more readable than `blue`)
 
+### Follow Renames
+
+- `git config --global log.follow true`
 
 ## Git Dojo
 
@@ -289,11 +306,36 @@ Your coworkers must pull it with rebasing!
 
 ## Tools
 
-### msysgit (Git for Windows)
+### msysgit (Git for Windows 1.9.5)
 
 - change home directory from `U:/` to `c:/Daten/P/Git/home/pesche/` :
   - mkdir `home/pesche` inside the Git installation (`c:/Daten/P/Git` for me)
   - edit `c:/Daten/P/Git/etc/profile` : replace `HOME="$(cd "$HOME" ; pwd)"` with `HOME="/home/pesche"`
+
+
+### SourceTree
+
+- embedded Git location:
+  - %USERPROFILE%\AppData\Local\Atlassian\SourceTree\git_local
+
+
+### SmartGit
+
+- configure .gitconfig location in file %APPDATA%\syntevo\SmartGit\<major-smartgit-version>\smartgit.properties
+  (see https://www.syntevo.com/doc/display/SG/System+Properties)
+
+    smartgit.executable.home=c:/Daten/P/SmartGit/home
+- Preferences Dialog is in Edit Menu (WTF?)
+  - set the path to git.exe
+
+#### Features
+
+- has not only GIt FLow, but also Git Flow Light
+- Graphical Log allows to show/hide each branch separately
+
+
+### JetBrains IntelliJ IDEA
+
 
 
 ### Beyond Compare
@@ -321,6 +363,22 @@ Tools / Options / Diff : just select Beyond Compare in the dropdowns for externa
 ## SVN
 
 cloning of fo_java since the creation of the ao directory (SVN 29714)
+
+### git svn for a repo where trunk/branches/tags are not at the root
+
+git svn init --trunk=$SVN_PATH/trunk --branches=$SVN_PATH/branches --tags=$SVN_PATH/tags $SVN_URL $GIT_REPO_NAME
+
+is the same as
+
+git svn init -s $SVN_URL/$SVN_PATH $GIT_REPO_NAME
+
+
+### using the prefix option
+
+--prefix=origin/
+... is the default for newer git versions
+
+http://blog.tfnico.com/2013/08/always-use-git-svn-with-prefix.html
 
 ### svn config for fo_test
 
