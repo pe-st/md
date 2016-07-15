@@ -53,6 +53,7 @@ Use `git difftool` instead of `git diff` to use an external diff tool (e.g. Beyo
 - new repo: `git init`
   (or: `git init --bare reponame.git`)
 - initial download repo: `git clone <URL>`
+  or `git clone -b <branch> <URL>`
 - get, don't merge: `git fetch`
 - get and merge: `git pull` or `git pull origin master`
   - without automatic commit: `git pull --rebase`

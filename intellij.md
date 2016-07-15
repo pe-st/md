@@ -196,6 +196,12 @@ https://github.com/develar/settings-repository
 
 - Default Binding: Alt-Shift-L (Edit / Sort Lines)
 
+### Grep Console
+
+Good for Maven Console etc.
+
+https://plugins.jetbrains.com/plugin/?idea&pluginId=7125
+
 
 ## Key Bindings
 
