@@ -202,6 +202,10 @@ Good for Maven Console etc.
 
 https://plugins.jetbrains.com/plugin/?idea&pluginId=7125
 
+### Markdown
+
+The Markdown Navigator Plugin seems to have more features
+
 
 ## Key Bindings
 
