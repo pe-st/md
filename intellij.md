@@ -206,6 +206,10 @@ https://plugins.jetbrains.com/plugin/?idea&pluginId=7125
 
 The Markdown Navigator Plugin seems to have more features
 
+### ASM Bytecode Outline
+### CamelCase
+### Save Actions
+
 
 ## Key Bindings
 
