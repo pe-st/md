@@ -82,12 +82,31 @@ Clone into new directory, mv the .git folder
 
 ### remotes
 
+- remotes have a name, default name (when you clone a repo) is `origin`
+- multiple remotes are possible, list of remotes:
+  `git remote -v` (-v adds the URLs to the output)
+- the remotes can also be seen with `git show-ref`
+
 create a new remote for an existing local repo:
 - on the remote:
   `git init --bare jboss_standalone.git`
 - on the local:
   `git remote add origin file:////DOMAIN/network/path/to/jboss_standalone.git`
   `git push origin master`
+
+add/delete/replace remote
+
+- `git remote add origin <URL>`
+- `git remote rm origin`
+- `git remote set-url origin <URL>`
+
+
+#### git-svn remotes
+
+- don't show up with `git remote`
+- can be seen with `git show-ref`
+  -> they are just branches
+
 
 
 ## files
@@ -148,6 +167,12 @@ Branches are stored in .git/refs
 - `git merge --abort` abort a merge with conflicts
 - `git merge --squash master` merges all commits from master into the current branch into one commit
 
+### rebase
+
+- `git rebase oss` 'moves' the commits of branch `oss` onto the current branch
+
+
+
 ### compare branches
 
 - simple with SourceTree (right-click on a branch, "Diff against current")
@@ -156,12 +181,6 @@ Branches are stored in .git/refs
 ### cherry pick
 
 - `git cherry-pick --no-commit f4343dc...` Copy one individual commit from another branch to the current one:
-
-### remote repo
-
-- `git remote add origin <URL>`
-
-  Git doesn't care what you name your remotes, but it's typical to name your main one `origin`.
 
 ### track/pull all branches
 
@@ -331,7 +350,7 @@ Your coworkers must pull it with rebasing!
 
 #### Features
 
-- has not only GIt FLow, but also Git Flow Light
+- has not only Git FLow, but also Git Flow Light
 - Graphical Log allows to show/hide each branch separately
 
 
