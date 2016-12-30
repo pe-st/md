@@ -28,6 +28,31 @@ git notes
 
 - `git show-ref`
 
+
+## Config
+
+There are four (five) places where Git checks for settings (in order of precedence):
+
+- super      : `%PROGRAMDATA%\Git\config` (machine specific settings on Windows; in modern Windows' this is `%SystemDrive%\ProgramData`, earlier `C:\Users\All Users`)
+  (the name 'super' is not official, but used by SmartGit in its logfiles)
+- 'system'   : `$(prefix)/etc/gitconfig` (machine specific, on Windows installation specific, e.g. `C:\Daten\P\Git\mingw64\etc\gitconfig`)
+- xdg global : `$XDG_CONFIG_HOME/git/config` or `$HOME/.config/git/config` (user global like 'global', but overwritten by 'global')
+  (XDG stands for freedesktop.org, formerly X Desktop Group; XDG_CONFIG_HOME: should default to `$HOME/.config`)
+- 'global'   : `~/.gitconfig` (user specific)
+- 'local'    : `.git/config` in the current repo
+
+Too see all configs including their source (since Git 2.8):
+`git config --list --show-origin`
+
+3 of the above places can explicitly specified to the `git config commands` with `--system`, `--global` and `--local`, resp.
+
+
+See also:
+
+    http://stackoverflow.com/questions/17756753/where-do-the-settings-in-my-git-configuration-come-from/35670933#35670933
+    http://stackoverflow.com/questions/34111522/why-git-config-list-total-is-not-the-same-as-system-global-local/34112678
+
+
 ## Diffing
 
 - `git diff` : shows what is not added yet
