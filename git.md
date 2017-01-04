@@ -312,6 +312,21 @@ Two flavours: annotated and lightweight
 - stage the files
 - `git commit --amend`
 
+### change the date of the last commit
+
+The author date:
+`git commit --amend --date="Thu Aug 13 22:56 2015 +0200"`
+
+Both dates:
+`GIT_COMMITTER_DATE="Thu Aug 13 22:56 2015 +0200" git commit --amend --date="Thu Aug 13 22:56 2015 +0200"`
+
+### changing commit date for all commits
+
+```
+$ git filter-branch -f --env-filter '
+export GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE"' HEAD
+```
+
 ### changing wrong author info
 
 ```
