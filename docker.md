@@ -13,10 +13,12 @@ Artifactory has docker extension
 https://docs.docker.com/engine/understanding-docker/
 
 Docker is client/server
-- the server is called the docker daemon
+
+- the server is called the docker daemon (or engine)
 - the docker command line utility is a client
 
 ### Docker Images
+
 - A Docker image is a read-only template. Images are used to create Docker containers.
 - Docker images are the *build* component of Docker.
 - Each image consists of a series of layers, starting from a base image (e.g. `ubuntu`)
@@ -24,15 +26,16 @@ Docker is client/server
 - specified by *repository:tag*, e.g. ubuntu:14.04; default tag is `latest`
 
 ### Docker Registries
+
 - Docker registries hold images. The public Docker registry is called Docker Hub.
 - Docker registries are the *distribution* component of Docker.
 - A registry can hold multiple repositories; the name for the *Official Repositories* is `library`
 
 ### Docker Containers
+
 - A Docker container holds everything that is needed for an application to run. Each container is created from a Docker image.
 - Docker containers are the *run* component of Docker.
 - When Docker runs a container from an image, it adds a read-write layer on top of the image in which your application can then run.
-
 
 ## Docker Hub
 
@@ -140,6 +143,27 @@ jboss/wildfly-admin
 ## Docker Repositories
 
 docker run -it artifactory.company.net/rhel bash
+
+
+## Docker Machine
+
+Command line utility `docker-machine`
+
+- needed on Windows/Mac prior to Docker 1.12
+- manages the hosts of the Docker Engine (e.g. Virtual Box)
+- on Linux useful if you have multiple hosts running Docker Engine
+
+Useful commands
+
+- `docker-machine ip <machine>`
+- `docker-machine env <machine>`
+
+If you didn't create machines yourself (e.g. because the default machine has not enough memory allocated),
+the `<machine>` name usually is `default`
+
+Example to create a bigger docker machine `machine`:
+
+    docker-machine create --virtualbox-disk-size 20000 --virtualbox-memory 8192 --virtualbox-cpu-count 4 --engine-storage-driver aufs  --engine-env http_proxy=http://10.0.2.2:3128 --engine-env https_proxy=http://10.0.2.2:3128 --engine-env no_proxy="localhost,127.0.0.1,.my-domain.net" --virtualbox-host-dns-resolver --engine-insecure-registry artifactory.my-domain.net -d virtualbox <machine>
 
 
 ## Linux on Mac
