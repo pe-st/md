@@ -1,12 +1,13 @@
 # Ethereum
 
-Cryptocurrency System
+Cryptocurrency System: https://ethereum.org/
 
 Ethereum Whitepaper: https://github.com/ethereum/wiki/wiki/White-Paper
 
 ## Terms
 
-- Homestead: the current release (Version 2)
+- Homestead: the current release (Version 2). Other releases: Frontier (old), Metropolis+Serenity (future)
+- Olympic, Morden and Ropsten: Testnet releases
 - Web 3
 - Ether and Gas
 - dapp: distributed app
@@ -31,6 +32,22 @@ From https://www.ethnews.com/how-to-choose-an-ethereum-wallet
 
 - https://github.com/matthiaszimmermann/ethereum-paper-wallet
 - https://ethereum.stackexchange.com/questions/103/is-there-a-way-to-generate-ethereum-paper-wallets
+
+
+## Ethereum Blockchain
+
+- Main Chain
+- Testnet (also distributed, less peers, easier to mine to get ether)
+- private network, e.g. with https://github.com/matthiaszimmermann/web3j_demo
+
+See https://ethereum.stackexchange.com/questions/719/whats-the-difference-between-developer-mode-and-testnet
+
+
+### Explorers
+
+https://ethereum.stackexchange.com/questions/404/what-ethereum-blockchain-explorers-exist
+
+- https://www.etherchain.org/
 
 
 ## Ether Units
