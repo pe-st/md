@@ -34,6 +34,12 @@ From https://www.ethnews.com/how-to-choose-an-ethereum-wallet
 - https://ethereum.stackexchange.com/questions/103/is-there-a-way-to-generate-ethereum-paper-wallets
 
 
+### Account Stats and Balance
+
+- Use a blockchain explorer, e.g. etherchain or etherscan
+- Programmatically: https://stackoverflow.com/questions/32312884/how-do-i-get-the-balance-of-an-account-in-ethereum
+
+
 ## Ethereum Blockchain
 
 - Main Chain
@@ -42,13 +48,16 @@ From https://www.ethnews.com/how-to-choose-an-ethereum-wallet
 
 See https://ethereum.stackexchange.com/questions/719/whats-the-difference-between-developer-mode-and-testnet
 
+### Statistics
+
+https://ethstats.net/
 
 ### Explorers
 
 https://ethereum.stackexchange.com/questions/404/what-ethereum-blockchain-explorers-exist
 
 - https://www.etherchain.org/
-
+- https://etherscan.io/
 
 ## Ether Units
 
@@ -71,6 +80,7 @@ See https://ethereum.stackexchange.com/questions/253/the-ether-denominations-are
 ## Docs and Links
 
 - http://ethdocs.org/en/latest/index.html
+- https://github.com/ethereum/wiki
 - https://www.slideshare.net/MatthiasZimmermann1/blockchain-ethereum-and-business-applications
 
 
