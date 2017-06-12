@@ -74,6 +74,8 @@ jboss/wildfly-admin
 - Detach ('quit') from an interactive container and keeping it running: Ctrl-P Ctrl-Q (only when the container was run with `-it`)
 - `docker reattach` Reattach to a detached container
 
+- `docker exec -it <id> /bin/bash` attaches to a running container, opening a shell
+
 
 ### Finding Images
 
@@ -155,8 +157,16 @@ Command line utility `docker-machine`
 
 Useful commands
 
+- `docker-machine ls`
+  ```
+  > docker-machine ls
+  NAME      ACTIVE   URL          STATE     URL                         SWARM   DOCKER   ERRORS
+  big       *        virtualbox   Running   tcp://192.168.99.101:2376           v1.9.1
+  default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1.9.1
+  ```
 - `docker-machine ip <machine>`
 - `docker-machine env <machine>`
+- `docker-machine upgrade` to get a newer docker version
 
 If you didn't create machines yourself (e.g. because the default machine has not enough memory allocated),
 the `<machine>` name usually is `default`
