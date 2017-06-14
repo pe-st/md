@@ -420,6 +420,19 @@ Your coworkers must pull it with rebasing!
 Tools / Options / Diff : just select Beyond Compare in the dropdowns for external Diff/Merge
 
 
+## Forks and Pull Requests
+
+Pull from a fork on GitHub
+
+    git pull https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git BRANCH_NAME
+
+Pull a pull request (with numerical id ID) from GitHub
+
+    git pull https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git pull/ID/head
+
+Note that you better checkout first the commit where the PR should apply...
+
+
 ## SVN
 
 cloning of fo_java since the creation of the ao directory (SVN 29714)
