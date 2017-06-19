@@ -70,11 +70,17 @@ jboss/wildfly-admin
 - `docker run -it ubuntu:14.04 bash` run a specific variant
 - `docker run -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"`
   daemonize ('detached mode', keep running in background)
+- `docker run -e FO_ENV=local -it mycontainer bash` set an environment variable
 
 - Detach ('quit') from an interactive container and keeping it running: Ctrl-P Ctrl-Q (only when the container was run with `-it`)
 - `docker reattach` Reattach to a detached container
 
 - `docker exec -it <id> /bin/bash` attaches to a running container, opening a shell
+
+Override stuff
+
+- `docker run -it --entrypoint=/bin/bash mycontainer` override the ENTRYPOINT
+- `docker run -it -h myhost mycontainer` override the default HOSTNAME
 
 
 ### Finding Images
