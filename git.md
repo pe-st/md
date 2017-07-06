@@ -432,6 +432,16 @@ Pull a pull request (with numerical id ID) from GitHub
 
 Note that you better checkout first the commit where the PR should apply...
 
+Sync a fork on GitHub
+
+    git clone https://github.com/YOUR_USERNAME/YOUR_FORK.git
+    cd YOUR_FORK
+    git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+    git fetch upstream
+    git checkout master
+    git merge upstream/master
+    git push
+
 
 ## SVN
 
