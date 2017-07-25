@@ -1,7 +1,27 @@
 = AsciiDoc
 
+== Links
+
 * http://asciidoc.org[AsciiDoc] is a markup language a little more powerful than Markdown
 * http://asciidoctor.org[Asciidoctor] is a popular implementation in Ruby
 * http://asciidoctor.org/news/2013/01/30/asciidoc-returns-to-github/[GitHub treats]
   .adoc and .asciidoc files as AsciiDoc markup
 * http://powerman.name/doc/asciidoc[AsciiDoc Cheatsheet] by Powerman
+
+== Asciidoctor
+
+=== macOS
+
+Installation with Homebrew: http://asciidoctor.org/docs/install-asciidoctor-osx
+
+ su - admin
+ brew install git
+ brew install ruby
+ echo "gem: -N -n /usr/local/bin" >> $HOME/.gemrc
+ gem install asciidoctor
+
+== Using Sublime
+
+* Prerequisite: Ruby and Asciidoctor installed
+* install package *OmniMarkupPreviewer*
+* usage with new command `OmniMarkupPreviewer: Preview Current Markup in Browser` (or a keyboard shortcut)
