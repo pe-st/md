@@ -103,6 +103,7 @@ Override stuff
 - `docker stop <id>` stop a running container politely
   `restart` and `start` do what you expect
 - `docker rm <id>` delete a (stopped) container
+- `docker rm $(docker ps -q -f status=exited)` delete all stopped containers
 
 
 ### Ports and IP Adresses
@@ -119,6 +120,18 @@ Override stuff
 
 - `docker run -v /path/host:/path/containers`
 - `docker run -w /usr/src/pesche` use `/usr/src/pesche` as working directory inside the container
+
+### Labels
+
+Mechanism for applying metadata to Docker objects.
+
+- A Label is a key-value pair.
+- the key should only use lowercase letters, '.' and '-'
+
+- `LABEL key="value"` sets a label in the Dockerfile
+- `docker run -l key=value` sets/overrides a label for container
+- `docker inspect <id>` shows low level information in JSON format, containing also the labels
+
 
 ## Building Images
 
