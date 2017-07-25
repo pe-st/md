@@ -40,6 +40,10 @@ Change Settings | Editor | Editor Tabs | Tab limit to a bigger number (e.g. 40)
 Comment Block (Ctrl-/) works only with the / on the numpad (https://youtrack.jetbrains.com/issue/IDEA-16116)
 
 
+## File Saving
+
+- Settings / Editor / General / Editor Tab / Mark Modified tabs with asterisk (does not seem to work)
+
 
 ## Import Maven project
 

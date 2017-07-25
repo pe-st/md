@@ -1,0 +1,32 @@
+= arc42
+
+== docToolchain
+
+* https://github.com/rdmueller/docToolchain[docToolchain] uses asciidoctor to generate arc42 docs
+
+=== setup
+
+* copy the GitHub repo
+* remove these folders and files:
+** '.git'
+** 'docs'
+** 'src/docs/manual' and 'src/docs/manual.adoc'
+** Everything in 'src/docs/images' except 'arc42-logo.png'
+* remove superfluous German stuff when writing in English
+** 'scr/docs/\*-de.adoc'
+
+=== using with maven
+
+* the wrapper 'mvnw' is not really needed when you have a working maven installation
+** you can remove 'mvnw' and 'mvnw.cmd'
+* the 'pom.xml' defines a standard goal, so you can just write `mvn` instead of `mvn generate-resources`
+* under the hood https://github.com/asciidoctor/asciidoctor-maven-plugin[asciidoctor-maven-plugin] is used
+
+=== structure
+
+* document root folder is 'src/docs'
+* the name of the root document is configured as `<sourceDocumentName>` in the 'pom.xml',
+  if you want to configure it on the command line, you must remove in the 'pom.xml' and then use
+  `mvn generate-resources -Dasciidoctor.sourceDocumentName=myroot.adoc`
+
+
