@@ -29,4 +29,7 @@
   if you want to configure it on the command line, you must remove in the 'pom.xml' and then use
   `mvn generate-resources -Dasciidoctor.sourceDocumentName=myroot.adoc`
 
+=== pdf configuration
 
+* The asciidoctor-maven-plugin uses asciidoctorj-pdf to generate PDFs
+* https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc[asciidoctor pdf theming guide]

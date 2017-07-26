@@ -6,7 +6,13 @@
 * http://asciidoctor.org[Asciidoctor] is a popular implementation in Ruby
 * http://asciidoctor.org/news/2013/01/30/asciidoc-returns-to-github/[GitHub treats]
   .adoc and .asciidoc files as AsciiDoc markup
+
+=== Syntax
+
+* http://asciidoc.org/userguide.html[User Guide] : Complete Guide
+* http://asciidoc.org/faq.html[FAQ]
 * http://powerman.name/doc/asciidoc[AsciiDoc Cheatsheet] by Powerman
+
 
 == Asciidoctor
 
@@ -14,11 +20,20 @@
 
 Installation with Homebrew: http://asciidoctor.org/docs/install-asciidoctor-osx
 
- su - admin
- brew install git
- brew install ruby
- echo "gem: -N -n /usr/local/bin" >> $HOME/.gemrc
- gem install asciidoctor
+----
+su - admin
+brew install git
+brew install ruby
+echo "gem: -N -n /usr/local/bin" >> $HOME/.gemrc
+gem install asciidoctor
+----
+
+=== Windows
+
+* install Ruby from https://rubyinstaller.org/downloads
+* add 'C:\Daten\P\Ruby22-x64\bin' to path
+* `gem install asciidoctor --http-proxy http://localhost:3128`
+
 
 == Using Sublime
 
