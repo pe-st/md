@@ -196,7 +196,7 @@ https://github.com/develar/settings-repository
 - Displays other keyboard bindings
 - good for pair programming
 
-### Lines Sorter
+### Lines Sorter (org.sylfra.idea.plugins.linessorter)
 
 - Default Binding: Alt-Shift-L (Edit / Sort Lines)
 
@@ -208,11 +208,13 @@ https://plugins.jetbrains.com/plugin/?idea&pluginId=7125
 
 ### Markdown
 
-The Markdown Navigator Plugin seems to have more features
+The Markdown Navigator Plugin (com.vladsch.idea.multimarkdown) seems to have more features
 
 ### ASM Bytecode Outline
-### CamelCase
-### Save Actions
+### CamelCase (de.netnexus.camelcaseplugin)
+### Docker Integration
+### Save Actions (com.dubreuia)
+### SonarLint (org.sonarlint.idea)
 
 
 ## Key Bindings
