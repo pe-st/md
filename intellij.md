@@ -215,6 +215,7 @@ The Markdown Navigator Plugin (com.vladsch.idea.multimarkdown) seems to have mor
 ### Docker Integration
 ### Save Actions (com.dubreuia)
 ### SonarLint (org.sonarlint.idea)
+### String Manipulation
 
 
 ## Key Bindings
