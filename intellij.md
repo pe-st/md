@@ -210,6 +210,7 @@ https://plugins.jetbrains.com/plugin/?idea&pluginId=7125
 
 The Markdown Navigator Plugin (com.vladsch.idea.multimarkdown) seems to have more features
 
+### AsciiDoc
 ### ASM Bytecode Outline
 ### CamelCase (de.netnexus.camelcaseplugin)
 ### Docker Integration

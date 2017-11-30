@@ -125,6 +125,12 @@ add/delete/replace remote
 - `git remote rm origin`
 - `git remote set-url origin <URL>`
 
+#### add second remote repo
+
+- `git remote add upstream https://github.com/docToolchain/docToolchain.git`
+- set tracked branch of local master to upstream/master (instead of origin/master)
+- pull (from upstream) and then "push to" origin/master from local master
+
 
 #### git-svn remotes
 
