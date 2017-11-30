@@ -162,6 +162,24 @@ After changing the line endings in `core.autocrlf` or `.gitattributes` repopulat
 `git rm --cached -r .`
 `git reset --hard`
 
+#### line endings for individual files
+
+Define explicit rules in `.gitattributes`, e.g.:
+
+    # Files that Sublime writes as LF even on Windows
+    Package[[:space:]]Control.sublime-settings text eol=lf
+    Preferences.sublime-settings text eol=lf
+
+Note how you have to escape whitespace inside a file name (!)
+
+Another way to adjust your workspace to a changed `.gitattributes` (see also above, this one is from
+https://help.github.com/articles/dealing-with-line-endings/#refreshing-a-repository-after-changing-line-endings):
+
+- backup and remove all 'changed' files in the workspace
+- `rm .git/index`
+- `git reset`
+- restore the files
+
 
 ## branches
 
