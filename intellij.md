@@ -267,6 +267,14 @@ Instead of Eclipse's Ctrl-T, use the gutter icons (left of the declaration)
 - Configure logs: Alias "Server Log", Location: c:\Daten\P\Java\jboss-eap-6.4\standalone\log\server.log
 - Deployment: add the EARs
 
+## Wildfly
+
+- download/unpack wildfly (Wildfly-11.0.0.Final.zip) -> c:\Daten\P\Java\wildfly-11.0.0.Final
+- Add Wildfly Server: Settings / Build, E&D / Application Servers : JBoss
+  JBoss Home = c:\Daten\P\Java\wildfly-11.0.0.Final
+  Name = Wildfly 11
+
+
 ## Datasource
 
 - Tool Window Database, add datasource, Oracle (driver must be loaded first)
