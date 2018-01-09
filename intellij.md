@@ -31,8 +31,9 @@ Use also the Default settings ('default' project)
 
 ### Niceties
 
-Enable Tool Buttons and Status Bar
-Change Settings | Editor | Editor Tabs | Tab limit to a bigger number (e.g. 40)
+- Enable Tool Buttons and Status Bar
+- Change Settings | Editor | Editor Tabs | Tab limit to a bigger number (e.g. 40)
+- Show heap/memory usage in Status Bar (Settings | App&Beh | Appearance : Show Memory Indicator)
 
 
 ### Issues

@@ -82,6 +82,13 @@ becomes
 
 ## Markdown tricks
 
+### Nested Lists
+
+You MUST indent the nested list by 4 spaces...
+
+- list
+    - nested 
+
 ### Comments
 
 Use HTML comments, e.g.

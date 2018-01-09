@@ -13,6 +13,17 @@
 * http://asciidoc.org/faq.html[FAQ]
 * http://powerman.name/doc/asciidoc[AsciiDoc Cheatsheet] by Powerman
 
+== Notes
+
+=== one colon vs two colons
+
+* `image:<target>[<attributes>]` is an inline macro
+* `image::<target>[<attributes>]` is a block macro
+
+See http://asciidoc.org/userguide.html#_block_macros[Block Macros]
+
+Use the block macro to have the image show up in a _list of figures_ etc.
+
 
 == Asciidoctor
 
