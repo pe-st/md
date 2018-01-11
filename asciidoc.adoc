@@ -1,19 +1,56 @@
 = AsciiDoc
 
+AsciiDoc is a format for writing formatted and organised documentation in plaintext.
+
+This document here is written in AsciiDoc.
+
+There are two toolchains to process AsciiDoc documents:
+
+* AsciiDoc: written in Python
+* AsciiDoctor: written in Ruby, thus easily usable from JVM land (e.g. Maven) thanks to JRuby and AsciidoctorJ
+
+[NOTE]
+The AsciiDoc website and software seem to be dead (the changelog stops at Version 8.6.9 from 2013-11-09), while there is still some activity on Github
+
 == Links
 
 * http://asciidoc.org[AsciiDoc] is a markup language a little more powerful than Markdown
 * http://asciidoctor.org[Asciidoctor] is a popular implementation in Ruby
-* http://asciidoctor.org/news/2013/01/30/asciidoc-returns-to-github/[GitHub treats]
-  .adoc and .asciidoc files as AsciiDoc markup
+* http://asciidoctor.org/docs/asciidoc-asciidoctor-diffs[Differences between Asciidoctor and AsciiDoc]
+* https://github.com/asciidoc/asciidoc[GitHub home of AsciiDoc]
+* https://github.com/asciidoctor/asciidoctor[GitHub home of AsciiDoctor]
+* https://github.com/asciidoctor/asciidoctorj[:coffee: Java bindings for Asciidoctor]
+* https://github.com/asciidoctor/asciidoctor-pdf[PDF converter without diversion to docbook]
+* https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc[Asciidoctor PDF Theming Guide]
+* https://github.com/asciidoctor/asciidoctorj-pdf[Asciidoctor PDF for JRuby]
+* https://github.com/asciidoctor/asciidoctor-maven-plugin[Maven Plugin for Asciidoctor]
 
 === Syntax
+
+AsciiDoc:
 
 * http://asciidoc.org/userguide.html[User Guide] : Complete Guide
 * http://asciidoc.org/faq.html[FAQ]
 * http://powerman.name/doc/asciidoc[AsciiDoc Cheatsheet] by Powerman
 
+AsciiDoctor:
+
+* http://asciidoctor.org/docs/user-manual[User Manual]
+* http://asciidoctor.org/docs/asciidoc-writers-guide[Writers Guide]
+* http://asciidoctor.org/docs/asciidoc-recommended-practices[Recommended Practices]
+
 == Notes
+
+=== support
+
+AsciiDoc documents are recognized and rendered on these platforms
+
+* http://asciidoctor.org/news/2013/01/30/asciidoc-returns-to-github/[GitHub] and Gists
+* GitLab
+
+Note that Bitbucket needs a plugin for rendering AsciiDoc documents,
+and Bitbucket wikis don't support it at all.
+
 
 === one colon vs two colons
 
@@ -25,7 +62,7 @@ See http://asciidoc.org/userguide.html#_block_macros[Block Macros]
 Use the block macro to have the image show up in a _list of figures_ etc.
 
 
-== Asciidoctor
+== Asciidoctor Setup
 
 === macOS
 
