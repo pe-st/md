@@ -87,7 +87,11 @@ becomes
 You MUST indent the nested list by 4 spaces...
 
 - list
-    - nested 
+    - nested
+
+### Emojis
+
+Many sites supporting Markdown (like GitHub) also support the emoticons from https://www.webpagefx.com/tools/emoji-cheat-sheet/
 
 ### Comments
 
