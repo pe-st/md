@@ -297,7 +297,23 @@ Method References (:: operator) kann anstelle eines Lambdas verwendet werden
 
 Differences to Spring Batch: https://blog.codecentric.de/en/2013/07/spring-batch-and-jsr-352-batch-applications-for-the-java-platform-differences/
 
+### JAX-RS
 
+`http://myHostName/contextPath/servletURI/resourceURI`
+
+**context root**, **context path**:
+
+The context root of a web application determines which URLs the Application Server will delegate to your web application. If your application's context root is myapp then any request for /myapp or /myapp/* will be handled by your application unless a more specific context root exists. If a second web application were assigned the context root myapp/help, a request for /myapp/help/help.jsp would be handled by the second web application, not the first.
+
+Corresponds often to the name of the WAR file
+
+**servlet URI**
+
+Specified by the @ApplicationPath annotation
+
+**resource URI**
+
+Specified by the @Path annotation(s)
 
 
 ## javadoc
