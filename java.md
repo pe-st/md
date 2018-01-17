@@ -287,8 +287,6 @@ JDBC verwendet OffsetDateTime, nicht ZonedDateTime
 
 Method References (:: operator) kann anstelle eines Lambdas verwendet werden
 
-### JBoss bei PASS
-
 
 
 ## Java EE
@@ -296,6 +294,31 @@ Method References (:: operator) kann anstelle eines Lambdas verwendet werden
 ### Java Batch JSR-352
 
 Differences to Spring Batch: https://blog.codecentric.de/en/2013/07/spring-batch-and-jsr-352-batch-applications-for-the-java-platform-differences/
+
+### CDI
+
+- FAQ: http://www.cdi-spec.org/faq/
+- WELD is the reference implementation: http://weld.cdi-spec.org/
+- WELD 2.x reference: http://docs.jboss.org/weld/reference/latest/en-US/pdf/weld-reference.pdf
+- JUnit 5 Tests: use weld-junit5 when Mockito is not enough
+
+Relation between EE, CDI and Weld Versions: http://weld.cdi-spec.org/documentation/#9 ; basically:
+
+EE  | CDI     | Weld
+--- | ----    | ----
+6   | 1.0     | 1.1
+7   | 1.1/1.2 | 2.x
+6   | 2.0     | 3.0
+
+Scopes:
+
+- `@RequestScoped` (built-in)
+- `@SessionScoped` (built-in, serializable)
+- `@ApplicationScoped` (built-in)
+- `@ConversationScoped` (built-in, serializable)
+- `@Singleton` (pseudo-scope, not proxied)
+- `@Dependant` (pseudo-scope, not proxied)
+
 
 ### JAX-RS
 
@@ -314,6 +337,11 @@ Specified by the @ApplicationPath annotation
 **resource URI**
 
 Specified by the @Path annotation(s)
+
+#### HTTP methods for REST
+
+- http://www.restapitutorial.com/lessons/httpmethods.html
+- https://restfulapi.net/create-rest-apis-with-jax-rs-2-0/
 
 
 ## javadoc
