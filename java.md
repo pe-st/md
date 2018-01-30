@@ -342,6 +342,7 @@ Specified by the @Path annotation(s)
 
 - http://www.restapitutorial.com/lessons/httpmethods.html
 - https://restfulapi.net/create-rest-apis-with-jax-rs-2-0/
+- http://restcookbook.com
 
 
 ## javadoc

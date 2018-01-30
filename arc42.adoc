@@ -13,7 +13,7 @@
 ** 'src/docs/manual' and 'src/docs/manual.adoc'
 ** Everything in 'src/docs/images' except 'arc42-logo.png'
 * remove superfluous German stuff when writing in English
-** 'scr/docs/\*-de.adoc'
+** 'src/docs/\*-de.adoc'
 
 === using with maven
 
