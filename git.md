@@ -295,6 +295,16 @@ Two flavours: annotated and lightweight
 
 - `git config --global log.follow true`
 
+
+## Git LFS
+
+- Muss separat installiert werden (Mac: brew install git-lfs)
+- Benötigt Server-Unterstützung (zB GitHub, GitLab, Bitbucket Cloud, Bitbucket Server)
+- `git lfs version`
+- `git lfs track`
+- `git lfs ls-files`
+
+
 ## Git Dojo
 
 - Git Commandline (Editor-Variable?)
