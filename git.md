@@ -300,6 +300,8 @@ Two flavours: annotated and lightweight
 
 - Muss separat installiert werden (Mac: brew install git-lfs)
 - Benötigt Server-Unterstützung (zB GitHub, GitLab, Bitbucket Cloud, Bitbucket Server)
+- Smartgit benötigt auf Mac eine Zeile `path=/usr/local/bin`
+  in `~/Library/Preferences/SmartGit/smartgit.vmoptions`
 - `git lfs version`
 - `git lfs install` adds a `filter "lfs"` entry to your home `.gitconfig`
 - `git lfs track`
