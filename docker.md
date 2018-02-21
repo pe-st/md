@@ -105,6 +105,9 @@ Override stuff
 - `docker rm <id>` delete a (stopped) container
 - `docker rm $(docker ps -q -f status=exited)` delete all stopped containers
 
+### Tagging images
+
+- `docker tag myregistry.host.net/name1/name2 name1/name2` give an alias to a fully qualified image
 
 ### Ports and IP Adresses
 
@@ -164,6 +167,14 @@ Mechanism for applying metadata to Docker objects.
 ## Docker Repositories
 
 docker run -it artifactory.company.net/rhel bash
+
+## Oneliners and Howto
+
+- remove all stopped containers: `docker rm $(docker ps -q -f status=exited)`
+- remove "<none>" images: `docker rmi $(docker images -f "dangling=true" -q)`
+- remove unused volumes: `docker volume rm $(docker volume ls -qf dangling=true)`
+- remove containers with untagged images: `docker rm -f $(docker ps --format "{{.ID}} {{.Image}}" | grep -E " [a-f0-9]{12}$" | cut -d" " -f 1)`
+
 
 
 ## Docker Machine
