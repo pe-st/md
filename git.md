@@ -471,6 +471,8 @@ Note that you better checkout first the commit where the PR should apply...
 
 Sync a fork on GitHub
 
+(use upstream or ORIGINAL_OWNER_origin etc. as name for the remote)
+
     git clone https://github.com/YOUR_USERNAME/YOUR_FORK.git
     cd YOUR_FORK
     git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
@@ -478,6 +480,11 @@ Sync a fork on GitHub
     git checkout master
     git merge upstream/master
     git push
+
+e.g. for garmin-connect-export
+
+    git remote add kjkjava_origin https://github.com/kjkjava/garmin-connect-export.git
+    git remote add moderation_origin https://github.com/moderation/garmin-connect-export
 
 
 ## SVN

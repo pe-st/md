@@ -2,11 +2,17 @@
 
 ## Unicode support
 
+## Ligature support
+
+e.g. in Jetbrains IDEs
+
+- Fira Code
 
 ## Programming Fonts
 
 - https://blog.codinghorror.com/revisiting-programming-fonts/
 - https://int10h.org/oldschool-pc-fonts/readme/
+
 
 ## Icon Fonts
 
