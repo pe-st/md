@@ -2,6 +2,8 @@
 
 ## Unicode support
 
+
+
 ## Ligature support
 
 e.g. in Jetbrains IDEs
@@ -12,6 +14,7 @@ e.g. in Jetbrains IDEs
 
 - https://blog.codinghorror.com/revisiting-programming-fonts/
 - https://int10h.org/oldschool-pc-fonts/readme/
+- Meslo LG (Windows) and Menlo (Apple): https://github.com/andreberg/Meslo-Font (customized Bitstream Vera Sans Mono)
 
 
 ## Icon Fonts
