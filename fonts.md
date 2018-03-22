@@ -15,6 +15,7 @@ e.g. in Jetbrains IDEs
 - https://blog.codinghorror.com/revisiting-programming-fonts/
 - https://int10h.org/oldschool-pc-fonts/readme/
 - Meslo LG (Windows) and Menlo (Apple): https://github.com/andreberg/Meslo-Font (customized Bitstream Vera Sans Mono)
+  Meslo LG S DZ means "small line gap, dotted zero" (there is also a variant with slashed zero)
 
 
 ## Icon Fonts
