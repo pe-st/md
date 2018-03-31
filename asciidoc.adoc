@@ -61,6 +61,11 @@ See http://asciidoc.org/userguide.html#_block_macros[Block Macros]
 
 Use the block macro to have the image show up in a _list of figures_ etc.
 
+=== missing
+
+* hyphenation
+* strikethrough (possible with attributes and CSS)
+
 
 == Asciidoctor Setup
 
