@@ -38,9 +38,13 @@ https://web.archive.org/web/20171207115720/http://python.net/~goodger/projects/p
 
 ## pytest
 
-- `pip install -U pytest`
+- `pip2 install -U pytest`
 
 - http://pythontesting.net/framework/pytest/pytest-introduction/
+
+### Running Tests
+
+- `py.test gcexport_test.py`
 
 
 ## pylint
