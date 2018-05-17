@@ -1,5 +1,12 @@
 # python
 
+## Stuff I don't like about python
+
+- indentation too important and error prone
+  (e.g. changing indentation for refactoring is a 'red' difference in Beyond Compare, not a 'blue' one as in other languages)
+- no constants (just UPPER_CASE convention, doesn't stop from changing; and pylint allows constants only in top level scope)
+
+
 ## python 2 vs python 3
 
 https://docs.python.org/3/howto/pyporting.html
