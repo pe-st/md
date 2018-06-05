@@ -41,9 +41,11 @@ See https://www.regular-expressions.info/atomic.html and https://www.regular-exp
 
 [reg-exp.info]: https://www.regular-expressions.info
 [regexr]: https://regexr.com
+[crossword]: https://regexcrossword.com/
 
 - [regular-expressions.info][reg-exp.info]
 - [RegExr][regexr]
+- [Regex Crossword][crossword]
 
 
 ## regex flavours

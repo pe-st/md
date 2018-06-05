@@ -139,6 +139,16 @@ add/delete/replace remote
   -> they are just branches
 
 
+### cloning etc
+
+- `git clone <URL>` gives a workspace with the default branch of the repo, the repo itself is in `.git`
+- `git clone --bare <URL>` clones just the repo, no checkout (and no `.git` folder)
+- `git clone --mirror <URL>` is like `--bare`, but the clone can be refreshed with `git remote update`
+- `git bundle` packages a repo into one file, can be restored into a repo with `git clone /path/to/bundle`
+
+See https://stackoverflow.com/questions/5578270/fully-backup-a-git-repo
+and https://stackoverflow.com/questions/3959924/whats-the-difference-between-git-clone-mirror-and-git-clone-bare
+
 
 ## files
 
