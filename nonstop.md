@@ -30,3 +30,8 @@ com.path.to.MyClass
 
 =(Ctrl-Y)
 ```
+
+### Escapes and Long Lines in PATHCOM
+
+- blanks, quotes, commas, semicolons must be enclosed in quotes (quotes must be doubled): `a "2"` must be written as `"a ""2"""`
+- long lines can be wrapped with `&` 
